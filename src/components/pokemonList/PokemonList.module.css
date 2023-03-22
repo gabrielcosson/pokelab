@@ -1,0 +1,14 @@
+.container{
+    width: 80%;
+    height: 80vh;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.title{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-weight: 900;
+    color: rgb(141, 0, 0);
+    font-size: 50px;
+}

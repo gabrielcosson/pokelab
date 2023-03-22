@@ -1,7 +1,7 @@
 import LogInContainerStyle from './LogInContainer.module.css';
 import LogInFields from '../logInFields/LogInFields';
 import { Link } from 'react-router-dom';
-import image from '../../assets/tab-icon.png';
+import image from '../../assets/pokeball.png';
 import buttonIcon from '../../assets/login.png';
 import OutHeader from '../outHeader/OutHeader';
 
