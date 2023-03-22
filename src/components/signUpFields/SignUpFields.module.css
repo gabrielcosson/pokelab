@@ -1,0 +1,23 @@
+.field{
+    border-radius: 5px;
+    width: 80%;
+    padding: 5px;
+    border: 2px solid rgb(156, 156, 156);
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 12px;
+}
+
+.title{
+    display: inline-block;
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    text-align: start;
+    color: rgb(141, 0, 0);
+    font-weight: 700;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+}   
