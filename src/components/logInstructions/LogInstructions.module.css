@@ -1,0 +1,32 @@
+.instructionsContainer{
+    position: absolute;
+    align-items: center;
+    background-color: white;
+    width: 370px;
+    height: 80px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 3px #ccc;
+    border-radius: 10px;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: justify;
+    display: flex;
+    padding: 15px;
+    }
+
+.image{
+    width: 100px;
+} 
+
+.instructions{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+span{
+    font-weight: 900;
+    color: red;
+}

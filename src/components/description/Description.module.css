@@ -1,0 +1,24 @@
+.descriptionContainer{
+    height: 25%;
+    width: 100%;
+    margin-top: 3%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.descriptionTitle{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 12%;
+    color: #54d100;
+}
+
+.description{
+    margin: 12%;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #535353;
+    font-weight: 500;
+}

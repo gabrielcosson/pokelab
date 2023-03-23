@@ -2,14 +2,10 @@ import SignUpContainerStyle from './SignUpContainer.module.css';
 import SignUpFields from '../signUpFields/SignUpFields';
 import { Link } from 'react-router-dom';
 import buttonIcon from '../../assets/signup.png';
-import OutHeader from '../outHeader/OutHeader';
 
 
 const SignUpContainer = (props) => {
-    return(
-        <>
-        <div className={SignUpContainerStyle.page}></div>
-        <OutHeader></OutHeader>        
+    return(     
         <div className={SignUpContainerStyle.container}>
             <h1 className={SignUpContainerStyle.title}>Sign Up</h1>
             <h5 className={SignUpContainerStyle.info}>Already have an account yet? <Link to='/logIn'>Log In</Link></h5>
@@ -19,7 +15,6 @@ const SignUpContainer = (props) => {
                 <h1 className={SignUpContainerStyle.buttonText}>CREATE ACCOUNT</h1>
             </div>
         </div>
-        </>
     );
 };
 

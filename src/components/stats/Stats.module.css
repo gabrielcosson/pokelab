@@ -1,0 +1,26 @@
+.statsTitle{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    font-size: 30px;
+    color: #0090d3;
+    padding-left: 10px;
+}
+
+
+.individualStat{
+    height: 50px;
+    margin-top: 20px;
+}
+
+.statName{
+    color: #0090d3;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.statValue{
+    text-align: justify;
+    color: #535353;
+    font-weight: 500;
+    padding-left: 10px;
+}
