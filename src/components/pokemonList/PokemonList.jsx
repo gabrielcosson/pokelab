@@ -1,6 +1,5 @@
 import PokemonListStyle from './PokemonList.module.css';
 import PokemonCard from '../../components/pokemonCard/PokemonCard';
-import Data from '../../../data.json';
 import Pagination from '../pagination/Pagination';
 import { Link } from 'react-router-dom';
 
@@ -17,13 +16,12 @@ const PokemonList = (props) => {
                 </div>
             </div>
             <div className={PokemonListStyle.container}>
-                {Object.values(Data).map(pokemon => 
+                {Object.values(props.data.results).map(pokemon => 
                     <PokemonCard 
                         name = {pokemon.name} 
-                        image = {pokemon.image}
+                        image = {pokemon.img_path}
+                        mainType = {pokemon.types[0]}
                         types = {pokemon.types}
-                        primaryColor = {pokemon.primaryColor}
-                        secondaryColor = {pokemon.secondaryColor}
                     ></PokemonCard>)}
             </div>
         </>

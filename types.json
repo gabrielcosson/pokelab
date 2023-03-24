@@ -1,92 +1,128 @@
 {
     "bug":{
         "image": "../../src/assets/types/bug.png",
-        "color": "#00690A"
+        "color": "#00690A",
+        "primaryColor": "#00690A",
+        "secondaryColor": "#00920E"
     },
 
     "dark":{
         "image": "../../src/assets/types/dark.png",
-        "color": "#52445C"
+        "color": "#52445C",
+        "primaryColor": "#52445C",
+        "secondaryColor": "#766385"
     },
 
     "dragon":{
         "image": "../../src/assets/types/dragon.png",
-        "color": "#5DB6CC"
+        "color": "#5DB6CC",
+        "primaryColor": "#5DB6CC",
+        "secondaryColor": "#74C8DC"
     },
 
     "electric":{
         "image": "../../src/assets/types/electric.png",
-        "color": "#C9BB00"
+        "color": "#C9BB00",
+        "primaryColor": "#C9BB00",
+        "secondaryColor": "#ECDF2F"
     },
 
     "fairy":{
         "image": "../../src/assets/types/fairy.png",
-        "color": "#CE1A4F"
+        "color": "#CE1A4F",
+        "primaryColor": "#CE1A4F",
+        "secondaryColor": "#F04D7D"
     },
 
     "fighting":{
         "image": "../../src/assets/types/fighting.png",
-        "color": "#B97100"
+        "color": "#B97100",
+        "primaryColor": "#B97100",
+        "secondaryColor": "#E4971E"
     },
 
     "fire":{
         "image": "../../src/assets/types/fire.png",
-        "color": "#B40000"
+        "color": "#B40000",
+        "primaryColor": "#B40000",
+        "secondaryColor": "#CD541C"
     },
 
     "flying":{
         "image": "../../src/assets/types/flying.png",
-        "color": "#697C85"
+        "color": "#697C85",
+        "primaryColor": "#697C85",
+        "secondaryColor": "#96A7AF"
     },
 
     "ghost":{
         "image": "../../src/assets/types/ghost.png",
-        "color": "#352E70"
+        "color": "#352E70",
+        "primaryColor": "#352E70",
+        "secondaryColor": "#5F589C"
     },
 
     "grass":{
         "image": "../../src/assets/types/grass.png",
-        "color": "#009B18"
+        "color": "#009B18",
+        "primaryColor": "#009B18",
+        "secondaryColor": "#15D934"
     },
 
     "ground":{
         "image": "../../src/assets/types/ground.png",
-        "color": "#936445"
+        "color": "#936445",
+        "primaryColor": "#936445",
+        "secondaryColor": "#AC7D5D"
     },
 
     "ice":{
         "image": "../../src/assets/types/ice.png",
-        "color": "#6FC1DA"
+        "color": "#6FC1DA",
+        "primaryColor": "#6FC1DA",
+        "secondaryColor": "#9CE6FD"
     },
 
     "normal":{
         "image": "../../src/assets/types/normal.png",
-        "color": "#947070"
+        "color": "#947070",
+        "primaryColor": "#947070",
+        "secondaryColor": "#AC8C8C"
     },
 
     "poison":{
         "image": "../../src/assets/types/poison.png",
-        "color": "#641477"
+        "color": "#641477",
+        "primaryColor": "#641477",
+        "secondaryColor": "#945EA0"
     },
 
     "psychic":{
         "image": "../../src/assets/types/psychic.png",
-        "color": "#A90080"
+        "color": "#A90080",
+        "primaryColor": "#A90080",
+        "secondaryColor": "#DE44B9"
     },
 
     "rock":{
         "image": "../../src/assets/types/rock.png",
-        "color": "#5B0000"
+        "color": "#5B0000",
+        "primaryColor": "#5B0000",
+        "secondaryColor": "#803030"
     },
 
     "steel":{
         "image": "../../src/assets/types/steel.png",
-        "color": "#127E52"
+        "color": "#127E52",
+        "primaryColor": "#127E52",
+        "secondaryColor": "#349C71"
     },
 
     "water":{
         "image": "../../src/assets/types/water.png",
-        "color": "#004CD5"
+        "color": "#004CD5",
+        "primaryColor": "#004CD5",
+        "secondaryColor": "#4282F6"
     }
 }
 
