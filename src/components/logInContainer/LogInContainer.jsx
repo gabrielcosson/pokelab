@@ -1,40 +1,23 @@
 import LogInContainerStyle from "./LogInContainer.module.css";
 import LogInFields from "../logInFields/LogInFields";
 import { Link } from "react-router-dom";
-import image from "../../assets/pokeball.png";
 import buttonIcon from "../../assets/login.png";
-import OutHeader from "../outHeader/OutHeader";
 import useFetchPost  from "../../hooks/useFetchPost";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export const LogInContainer = (props) => {
+const LogInContainer = (props) => {
+
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
-const gettingInfoForm = (data, emailBool, passwordBool) => {
+  const gettingInfoForm = (data, emailBool, passwordBool) => {
     if (emailBool) setUser({ ...user, email: data });
     if (passwordBool) setUser({ ...user, password: data });
   };
 
   const {getFetch} = useFetchPost();
-
-const LogInContainer = (props) => {
-    return(
-        <div className={LogInContainerStyle.container}>
-            <h1 className={LogInContainerStyle.title}>Log In</h1>
-            <h5 className={LogInContainerStyle.info}>Doesn't have an account yet? <Link to='/signUp'>Sign Up</Link></h5>
-            <LogInFields></LogInFields>
-            <Link to= '/home'>
-                <div className={LogInContainerStyle.button}>
-                    <img alt="logIn.png" className={LogInContainerStyle.buttonIcon} src={buttonIcon}/>
-                    <h1 className={LogInContainerStyle.buttonText}>LOG IN</h1>
-                </div>
-            </Link>
-        </div>
-    );
-};
 
   const validateInfo = () => {
     /* console.log(
@@ -45,34 +28,20 @@ const LogInContainer = (props) => {
     const statusPerson = getFetch("http://localhost:8080/pokedex/auth/logIn", user, "");
     console.log(statusPerson);
   };
-  return (
-    <>
-      <div className={LogInContainerStyle.page}></div>
-      <OutHeader></OutHeader>
-      <div className={LogInContainerStyle.instructionsContainer}>
-        <img className={LogInContainerStyle.image} src={image} alt="pokeball" />
-        <h3 className={LogInContainerStyle.instructions}>
-          Please enter your credentials to log in. If you do not have an
-          account, please use the <span>Sign Up</span> button
-        </h3>
-      </div>
-      <div className={LogInContainerStyle.container}>
-        <h1 className={LogInContainerStyle.title}>Log In</h1>
-        <h5 className={LogInContainerStyle.info}>
-          Doesn't have an account yet? <Link to="/signUp">Sign Up</Link>
-        </h5>
-        <LogInFields newUser={gettingInfoForm}></LogInFields>
-        <button onClick={() => validateInfo()}>
-          <div className={LogInContainerStyle.button}>
-            <img
-              alt="logIn.png"
-              className={LogInContainerStyle.buttonIcon}
-              src={buttonIcon}
-            />
-            <h1 className={LogInContainerStyle.buttonText}>LOG IN</h1>
-          </div>
-        </button>
-      </div>
-    </>
-  );
-};
+    
+  return(
+        <div className={LogInContainerStyle.container}>
+            <h1 className={LogInContainerStyle.title}>Log In</h1>
+            <h5 className={LogInContainerStyle.info}>Doesn't have an account yet? <Link to='/signUp'>Sign Up</Link></h5>
+            <LogInFields newUser={gettingInfoForm}></LogInFields>
+            <button onClick={() => validateInfo()}>
+              <div className={LogInContainerStyle.button}>
+                <img alt="logIn.png" className={LogInContainerStyle.buttonIcon} src={buttonIcon}/>
+                <h1 className={LogInContainerStyle.buttonText}>LOG IN</h1>
+              </div>
+            </button>
+        </div>
+    );
+  };
+
+export default LogInContainer;
