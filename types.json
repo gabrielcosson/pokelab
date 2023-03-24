@@ -1,91 +1,90 @@
 {
-    "Bug":{
-        "image": "",
+    "bug":{
+        "image": "../../src/assets/types/bug.png",
         "color": "#00690A"
     },
 
-    "Dark":{
-        "image": "",
+    "dark":{
+        "image": "../../src/assets/types/dark.png",
         "color": "#52445C"
     },
 
-    "Dragon":{
-        "image": "",
+    "dragon":{
+        "image": "../../src/assets/types/dragon.png",
         "color": "#5DB6CC"
     },
 
-    "Electric":{
-        "image": "",
+    "electric":{
+        "image": "../../src/assets/types/electric.png",
         "color": "#C9BB00"
     },
 
-    "Fairy":{
-        "image": "",
+    "fairy":{
+        "image": "../../src/assets/types/fairy.png",
         "color": "#CE1A4F"
     },
 
-    "Fighting":{
-        "image": "",
+    "fighting":{
+        "image": "../../src/assets/types/fighting.png",
         "color": "#B97100"
     },
 
-    "Fire":{
+    "fire":{
         "image": "../../src/assets/types/fire.png",
-        "color": "#B40000",
-        "icon": "faFireFlameCurved"
+        "color": "#B40000"
     },
 
-    "Flying":{
-        "image": "",
+    "flying":{
+        "image": "../../src/assets/types/flying.png",
         "color": "#697C85"
     },
 
-    "Ghost":{
-        "image": "",
+    "ghost":{
+        "image": "../../src/assets/types/ghost.png",
         "color": "#352E70"
     },
 
-    "Grass":{
-        "image": "",
+    "grass":{
+        "image": "../../src/assets/types/grass.png",
         "color": "#009B18"
     },
 
-    "Ground":{
-        "image": "",
+    "ground":{
+        "image": "../../src/assets/types/ground.png",
         "color": "#936445"
     },
 
-    "Ice":{
-        "image": "",
+    "ice":{
+        "image": "../../src/assets/types/ice.png",
         "color": "#6FC1DA"
     },
 
-    "Normal":{
-        "image": "",
+    "normal":{
+        "image": "../../src/assets/types/normal.png",
         "color": "#947070"
     },
 
-    "Poison":{
-        "image": "",
+    "poison":{
+        "image": "../../src/assets/types/poison.png",
         "color": "#641477"
     },
 
-    "Psychic":{
-        "image": "",
+    "psychic":{
+        "image": "../../src/assets/types/psychic.png",
         "color": "#A90080"
     },
 
-    "Rock":{
-        "image": "",
+    "rock":{
+        "image": "../../src/assets/types/rock.png",
         "color": "#5B0000"
     },
 
-    "Steel":{
-        "image": "",
+    "steel":{
+        "image": "../../src/assets/types/steel.png",
         "color": "#127E52"
     },
 
-    "Water":{
+    "water":{
         "image": "../../src/assets/types/water.png",
         "color": "#004CD5"
     }

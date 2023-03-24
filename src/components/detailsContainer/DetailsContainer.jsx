@@ -4,7 +4,7 @@ import Description from '../description/Description';
 import Stats from '../stats/Stats';
 import Skills from '../skills/Skills';
 import Evolution from '../evolution/Evolution'; 
-import Types from '../../../types.json';
+import TypeContainer from '../typeContainer/TypeContainer';
 
 const DetailsContainer = (props) => {
     return(
@@ -14,11 +14,7 @@ const DetailsContainer = (props) => {
                     <h1 className={DetailsContainerStyle.name}>{Details.name}</h1>
                 </div>
                 <div className={DetailsContainerStyle.typeContainer}>
-                    {(Details.types).map(type => 
-                    <>
-                        <img className={DetailsContainerStyle.typeImage} src={Types[type].image}></img>
-                        <h1 className={DetailsContainerStyle.type} style={{color: Types[type].color}}>{type}</h1>
-                    </>)}
+                    {(Details.types).map(type => <TypeContainer type = {type}></TypeContainer>)}
                 </div>
             </div>
 
