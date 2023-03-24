@@ -1,7 +1,7 @@
 import LogInStructureStyle from './LogInStructure.module.css';
 import OutHeader from '../outHeader/OutHeader';
 import LogInstructions from '../logInstructions/LogInstructions';
-import LogInContainer from '../logInContainer/LogInContainer';
+import {LogInContainer} from '../logInContainer/LogInContainer';
 
 
 const LogInStructure = (props) => {
@@ -10,7 +10,7 @@ const LogInStructure = (props) => {
         <div className={LogInStructureStyle.page}></div>
         <OutHeader></OutHeader>
         <LogInstructions></LogInstructions>
-        <LogInContainer></LogInContainer>
+        {<LogInContainer/>}
         </>
     );
 };
