@@ -10,7 +10,7 @@ class Home extends Component{
             <>
                 <InHeader></InHeader>
                 <SearchLanguage></SearchLanguage>
-                <PokemonList></PokemonList>               
+                <PokemonList></PokemonList>  
             </>
         )
     }

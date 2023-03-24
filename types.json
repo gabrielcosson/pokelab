@@ -1,0 +1,94 @@
+{
+    "Bug":{
+        "image": "",
+        "color": "#00690A"
+    },
+
+    "Dark":{
+        "image": "",
+        "color": "#52445C"
+    },
+
+    "Dragon":{
+        "image": "",
+        "color": "#5DB6CC"
+    },
+
+    "Electric":{
+        "image": "",
+        "color": "#C9BB00"
+    },
+
+    "Fairy":{
+        "image": "",
+        "color": "#CE1A4F"
+    },
+
+    "Fighting":{
+        "image": "",
+        "color": "#B97100"
+    },
+
+    "Fire":{
+        "image": "../../src/assets/types/fire.png",
+        "color": "#B40000",
+        "icon": "faFireFlameCurved"
+    },
+
+    "Flying":{
+        "image": "",
+        "color": "#697C85"
+    },
+
+    "Ghost":{
+        "image": "",
+        "color": "#352E70"
+    },
+
+    "Grass":{
+        "image": "",
+        "color": "#009B18"
+    },
+
+    "Ground":{
+        "image": "",
+        "color": "#936445"
+    },
+
+    "Ice":{
+        "image": "",
+        "color": "#6FC1DA"
+    },
+
+    "Normal":{
+        "image": "",
+        "color": "#947070"
+    },
+
+    "Poison":{
+        "image": "",
+        "color": "#7D009B"
+    },
+
+    "Psychic":{
+        "image": "",
+        "color": "#A90080"
+    },
+
+    "Rock":{
+        "image": "",
+        "color": "#5B0000"
+    },
+
+    "Steel":{
+        "image": "",
+        "color": "#127E52"
+    },
+
+    "Water":{
+        "image": "../../src/assets/types/water.png",
+        "color": "#004CD5"
+    }
+}
+
+    

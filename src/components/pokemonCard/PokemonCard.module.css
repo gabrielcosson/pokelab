@@ -1,12 +1,12 @@
 .container{
-    height: 150px;
-    width: 270px;
+    height: 19vh;
+    width: 19%;
     border-radius: 25px;
-    display: inline-block;
-    margin-right: 70px;
+    margin: 35px;
     position: relative;
-    margin-top: 30px;
-
+    margin-bottom: 41px;
+    margin-top: 0;
+    display: inline-block;
 }
 
 .container:hover{
