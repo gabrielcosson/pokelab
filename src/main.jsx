@@ -1,11 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { NumberOfCalls } from './components/NumberOfCalls'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import LogIn from './pages/LogIn';
+
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-
-
   <React.StrictMode>
-    <NumberOfCalls/>
+    <LogIn />
+    {/* <NumberOfCalls /> */}
   </React.StrictMode>
 );
