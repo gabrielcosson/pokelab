@@ -6,8 +6,13 @@ import LanguageOptions from '../languageOptions/LanguageOptions';
 const SearchLanguage = (props) => {
     return(
         <div className={SearchLanguageStyle.container}>
-            <SearchBar></SearchBar>
-            <LanguageOptions></LanguageOptions>
+            <div className={SearchLanguageStyle.searchBar}>
+                <SearchBar></SearchBar>
+            </div>
+            <div className={SearchLanguageStyle.languageOptions}>
+                <LanguageOptions></LanguageOptions>
+            </div>
+            
         </div>
     );
 };

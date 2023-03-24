@@ -16,9 +16,10 @@
 }
 
 .description{
-    margin: 12%;
+    margin-left: 12%;
     margin-top: 10px;
     margin-bottom: 0;
+    margin-right: 5%;
     color: #535353;
     font-weight: 500;
 }

@@ -4,9 +4,7 @@ import DetailsStructure from '../components/detailsStructure/DetailsStructure';
 class Details extends Component{
     render(){
         return(
-            <>
-                <DetailsStructure></DetailsStructure>           
-            </>
+            <DetailsStructure></DetailsStructure>           
         )
     }
 }

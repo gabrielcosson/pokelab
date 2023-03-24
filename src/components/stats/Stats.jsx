@@ -1,3 +1,4 @@
+import StatValue from '../statValue/StatValue';
 import StatsStyle from './Stats.module.css';
 
 const Stats = (props) => {
@@ -5,33 +6,27 @@ const Stats = (props) => {
       <>
         <h2 className={StatsStyle.statsTitle}>Stats</h2>
         <div className={StatsStyle.individualStat}>
-            <h3 className={StatsStyle.statName}>Health</h3> 
-            <h3 className={StatsStyle.statValue}>{props.details.stats.health}</h3> 
+            <StatValue name= "Health" value = {props.details.stats.health}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <h3 className={StatsStyle.statName}>Attack</h3> 
-            <h3 className={StatsStyle.statValue}>{props.details.stats.attack}</h3> 
+            <StatValue name= "Attack" value = {props.details.stats.attack}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <h3 className={StatsStyle.statName}>Defense</h3> 
-            <h3 className={StatsStyle.statValue}>{props.details.stats.defense}</h3> 
+            <StatValue name= "Defense" value = {props.details.stats.defense}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <h3 className={StatsStyle.statName}>Special Attack</h3> 
-            <h3 className={StatsStyle.statValue}>{props.details.stats.specialAttack}</h3> 
+            <StatValue name= "Special Attack" value = {props.details.stats.specialAttack}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <h3 className={StatsStyle.statName}>Special Defense</h3> 
-            <h3 className={StatsStyle.statValue}>{props.details.stats.specialDefense}</h3> 
+            <StatValue name= "Special Defense" value = {props.details.stats.specialDefense}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <h3 className={StatsStyle.statName}>Speed</h3> 
-            <h3 className={StatsStyle.statValue}>{props.details.stats.speed}</h3> 
+            <StatValue name= "Speed" value = {props.details.stats.speed}></StatValue>
         </div></>
     );
 };

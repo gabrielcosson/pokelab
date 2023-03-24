@@ -2,6 +2,7 @@ import PokemonListStyle from './PokemonList.module.css';
 import PokemonCard from '../../components/pokemonCard/PokemonCard';
 import Data from '../../../data.json';
 import Pagination from '../pagination/Pagination';
+import { Link } from 'react-router-dom';
 
 
 const PokemonList = (props) => {
@@ -9,7 +10,7 @@ const PokemonList = (props) => {
         <>
             <div className={PokemonListStyle.listHeader}>
                 <div className={PokemonListStyle.titleContainer}>
-                    <h1 className={PokemonListStyle.title}> Pokedex</h1>
+                    <h1 className={PokemonListStyle.title}> <Link to="/details">Pokedex</Link></h1>
                 </div>
                 <div className={PokemonListStyle.paginationContainer}>
                     <Pagination></Pagination>

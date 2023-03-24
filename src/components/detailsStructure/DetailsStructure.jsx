@@ -10,7 +10,7 @@ const DetailsStructure = (props) => {
             <InHeader></InHeader>
             <div className={DetailsStructureStyle.detailsHeader}>
                 <div className={DetailsStructureStyle.titleContainer}>
-                    <h1 className={DetailsStructureStyle.title}> Pokedex</h1>
+                    <h1 className={DetailsStructureStyle.title}>Pokedex</h1>
                 </div>
                 <div className={DetailsStructureStyle.languageContainer}>
                     <LanguageOptions></LanguageOptions>

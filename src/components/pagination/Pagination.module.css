@@ -13,11 +13,12 @@
     display: flex;
     text-align: center;
     height: 30px;
-    width: 50%;
+    width: 55%;
     justify-content: space-around;
     align-items: center;  
     box-shadow: 2px 2px 5px black;  
     background-color: white;
+    margin-left: 25%;
 }
 
 .icon{

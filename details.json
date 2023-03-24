@@ -2,7 +2,7 @@
     "name": "Charmander",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
     "description": "The fire on the tip of its tail is a measure of its life. If healthy, its tail burns intensely.",
-    "types": ["Fire"],
+    "types": ["Fire", "Water"],
     "secondaryColor": "#C80000",
     "primaryColor":"#D56206",
     "abilities": {
