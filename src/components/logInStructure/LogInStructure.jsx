@@ -1,7 +1,7 @@
 import LogInStructureStyle from './LogInStructure.module.css';
 import OutHeader from '../outHeader/OutHeader';
 import LogInstructions from '../logInstructions/LogInstructions';
-import LogInContainer from '../logInContainer/logInContainer';
+import LogInContainer from '../logInContainer/LogInContainer';
 
 
 const LogInStructure = (props) => {

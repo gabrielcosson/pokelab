@@ -24,19 +24,12 @@ const SignUpContainer = (props) => {
   return (
     <>
       <div className={SignUpContainerStyle.page}></div>
-      <OutHeader></OutHeader>
       <div className={SignUpContainerStyle.container}>
         <h1 className={SignUpContainerStyle.title}>Sign Up</h1>
-        <h5 className={SignUpContainerStyle.info}>
-          Already have an account yet? <Link to="/logIn">Log In</Link>
-        </h5>
+        <h5 className={SignUpContainerStyle.info}>Already have an account yet? <Link to="/logIn">Log In</Link></h5>
         <SignUpFields newUser={gettingInfoForm}></SignUpFields>
         <div className={SignUpContainerStyle.button}>
-          <img
-            alt="signUp.png"
-            className={SignUpContainerStyle.buttonIcon}
-            src={buttonIcon}
-          />
+          <img alt="signUp.png" className={SignUpContainerStyle.buttonIcon} src={buttonIcon}/>
           <h1 className={SignUpContainerStyle.buttonText}>CREATE ACCOUNT</h1>
         </div>
       </div>
