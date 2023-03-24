@@ -5,7 +5,7 @@ import buttonIcon from "../../assets/login.png";
 import useFetchPost  from "../../hooks/useFetchPost";
 import { useState } from "react";
 
-const LogInContainer = (props) => {
+export const LogInContainer = (props) => {
 
   const [user, setUser] = useState({
     email: "",
@@ -43,5 +43,3 @@ const LogInContainer = (props) => {
         </div>
     );
   };
-
-export default LogInContainer;
