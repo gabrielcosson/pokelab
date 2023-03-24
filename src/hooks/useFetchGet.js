@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-export const useFetchGet = (baseURL) => {
+const useFetchGet = (baseURL) => {
   const [state, setState] = useState({
     data: null,
     isLoadin: true,
     hasError: null,
   });
-  const postFetch = async () => {
+  const getFetch = async () => {
     setState({ ...state, isLoadin: true });
     const resp = await axios.get(baseURL).then((response) => {
       setState({ data: response.data, isLoadin: false, hasError: null });
     });
   };
   useEffect(() => {
-    postFetch();
+    getFetch();
     return () => {};
   }, [baseURL]);
 
@@ -24,3 +23,4 @@ export const useFetchGet = (baseURL) => {
     hasError: state.hasError,
   };
 };
+export default useFetchGet;
