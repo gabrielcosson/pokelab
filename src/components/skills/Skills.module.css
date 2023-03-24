@@ -1,0 +1,30 @@
+.skillsContainer{
+    height: 58%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.skillsTitle{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    font-size: 30px;
+    color: #e4a700;
+    padding-left: 10px;
+}
+
+.skillName{
+    color: #e4a700;
+    font-style: italic;
+    margin-top: 30px;
+    padding-left: 10px;
+}
+
+
+.skillDescription{
+    text-align: justify;
+    color: #535353;
+    font-weight: 500;
+    padding: 10px;
+
+}

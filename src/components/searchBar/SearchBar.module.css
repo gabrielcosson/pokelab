@@ -1,0 +1,44 @@
+.searchBar{
+    height: 100%;
+    width: 100%;
+}
+
+
+.searchForm{
+    width: 80%;
+    height: 15px;
+    background: rgba(161, 161, 161, 0.4);
+    display: flex;
+    align-items: center;
+    border-radius:  60px;
+    padding: 10px 20px;
+    margin-left: 4%;
+}
+
+.searchForm input{
+    font-family: 'Lato', 'Courier New', Courier, monospace ;
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 15px;
+    color: #585858;
+}
+
+.searchForm button{
+    border: 0;
+    border-radius: 50%;
+    height: 25px;
+    background-color: rgba(161, 161, 161, 0.3);
+}
+
+.searchForm button img{
+    border: 0;
+    height: 65%;
+    padding: 5px;
+}
+
+.searchForm button:hover{
+    cursor: pointer;
+}

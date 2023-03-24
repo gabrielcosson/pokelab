@@ -1,28 +1,18 @@
 import SearchLanguageStyle from './SearchLanguage.module.css';
-import searchIcon from '../../assets/search.png'
-import englishFlag from '../../assets/en.png'
-import spanishFlag from '../../assets/es.jpg'
-import germanFlag from '../../assets/de.png'
-import japaneseFlag from '../../assets/ja.png'
-
-
+import SearchBar from '../searchBar/SearchBar';
+import LanguageOptions from '../languageOptions/LanguageOptions';
 
 
 const SearchLanguage = (props) => {
     return(
         <div className={SearchLanguageStyle.container}>
             <div className={SearchLanguageStyle.searchBar}>
-                <form action="" className={SearchLanguageStyle.searchForm}>
-                    <input type= "text" placeholder='Search...'></input>
-                    <button type = "submit"><img src={searchIcon}></img></button>
-                </form>
+                <SearchBar></SearchBar>
             </div>
-            <div className={SearchLanguageStyle.languages}>
-                <div className={SearchLanguageStyle.english}></div>
-                <div className={SearchLanguageStyle.spanish}></div>
-                <div className={SearchLanguageStyle.german}></div>
-                <div className={SearchLanguageStyle.japanese}></div>
+            <div className={SearchLanguageStyle.languageOptions}>
+                <LanguageOptions></LanguageOptions>
             </div>
+            
         </div>
     );
 };

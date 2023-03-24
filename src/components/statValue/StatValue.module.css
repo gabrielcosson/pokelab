@@ -1,0 +1,38 @@
+.statName{
+    color: #0090d3;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+.valueContainer{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.value{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    margin-left: 10px;
+    color: #0090d3;
+    font-style: italic;
+}
+
+.filled{
+    height: 40px;
+    width: 40px;
+    background-color: #0090d3;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px black;
+}
+
+.empty{
+    height: 40px;
+    width: 40px;
+    background-color: gray;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px black;
+}

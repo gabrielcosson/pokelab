@@ -1,14 +1,40 @@
 .container{
-    width: 80%;
-    height: 80vh;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 90%;
+    height: 72vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0;
+    margin-top: 1%;
+    margin-bottom: 0;
 }
 
 .title{
     font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
     font-weight: 900;
     color: rgb(141, 0, 0);
     font-size: 50px;
+    padding: 0;
+    text-align: center;
+}
+
+.listHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.titleContainer{
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.paginationContainer{
+    height: 100%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

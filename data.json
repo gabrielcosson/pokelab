@@ -37,5 +37,45 @@
         "types": ["Fire"],
         "secondaryColor": "#C80000",
         "primaryColor":"#D56206"
+    },
+
+    "5":{
+        "name": "Charmander",
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+        "types": ["Fire"],
+        "secondaryColor": "#C80000",
+        "primaryColor":"#D56206"
+    },
+
+    "6":{
+        "name": "Charmander",
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+        "types": ["Fire"],
+        "secondaryColor": "#C80000",
+        "primaryColor":"#D56206"
+    },
+
+    "7":{
+        "name": "Charmander",
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+        "types": ["Fire"],
+        "secondaryColor": "#C80000",
+        "primaryColor":"#D56206"
+    },
+
+    "8":{
+        "name": "Charmander",
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+        "types": ["Fire"],
+        "secondaryColor": "#C80000",
+        "primaryColor":"#D56206"
+    },
+
+    "9":{
+        "name": "Charmander",
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+        "types": ["Fire"],
+        "secondaryColor": "#C80000",
+        "primaryColor":"#D56206"
     }
 } 

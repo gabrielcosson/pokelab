@@ -13,12 +13,28 @@ export const LogInContainer = (props) => {
     password: "",
   });
 
-  const gettingInfoForm = (data, emailBool, passwordBool) => {
+const gettingInfoForm = (data, emailBool, passwordBool) => {
     if (emailBool) setUser({ ...user, email: data });
     if (passwordBool) setUser({ ...user, password: data });
   };
 
   const {getFetch} = useFetchPost();
+
+const LogInContainer = (props) => {
+    return(
+        <div className={LogInContainerStyle.container}>
+            <h1 className={LogInContainerStyle.title}>Log In</h1>
+            <h5 className={LogInContainerStyle.info}>Doesn't have an account yet? <Link to='/signUp'>Sign Up</Link></h5>
+            <LogInFields></LogInFields>
+            <Link to= '/home'>
+                <div className={LogInContainerStyle.button}>
+                    <img alt="logIn.png" className={LogInContainerStyle.buttonIcon} src={buttonIcon}/>
+                    <h1 className={LogInContainerStyle.buttonText}>LOG IN</h1>
+                </div>
+            </Link>
+        </div>
+    );
+};
 
   const validateInfo = () => {
     /* console.log(

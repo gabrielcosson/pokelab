@@ -1,0 +1,37 @@
+{
+    "name": "Charmander",
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    "description": "The fire on the tip of its tail is a measure of its life. If healthy, its tail burns intensely.",
+    "types": ["Fire", "Water"],
+    "secondaryColor": "#C80000",
+    "primaryColor":"#D56206",
+    "abilities": {
+        "0": {
+            "name": "Blaze",
+            "description": "When this Pokemon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5x as much regular damage."
+        },
+        "1": {
+            "name": "Solar-Power",
+            "description": "During strong sunlight, this Pokemon has 1.5x its Special Attack but takes 1/8 of its maximum HP in damage after each turn."
+        }
+    },
+    "evolution":{
+        "0": {
+            "name": "Charmeleon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/5.svg"
+        },
+        "1": {
+            "name": "Charizard",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
+        }
+    },
+
+    "stats": {
+        "health": 40,
+        "attack": 60,
+        "defense": 30,
+        "specialAttack": 31,
+        "specialDefense": 31,
+        "speed": 70
+    }
+} 

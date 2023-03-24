@@ -50,6 +50,15 @@ const SignUpFields = ({ newUser }) => {
           onChange={onInputEmailChange}
         ></input>
       </div>
+      
+      <h6 className={SignUpFieldsStyle.title}>Trainer Username</h6>
+            <div className={SignUpFieldsStyle.inputSpace}>
+                <input
+                type='text'
+                placeholder='Write a trainer username here'
+                className={SignUpFieldsStyle.field}
+                ></input>
+            </div>
 
       <h6 className={SignUpFieldsStyle.title}>Password</h6>
       <div className={SignUpFieldsStyle.inputSpace}>
