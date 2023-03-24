@@ -1,20 +1,26 @@
-import { useState } from 'react';
-import SignUpFieldsStyle from './SignUpFields.module.css';
+import { useState } from "react";
+import SignUpFieldsStyle from "./SignUpFields.module.css";
 
 const SignUpFields = ({ newUser }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState("");
   const onInputNameChange = ({ target }) => {
-        newUser(target.value, "name");
+    newUser(target.value, "name");
     setName(target.value);
+  };
+
+  const onInputUsernameChange = ({ target }) => {
+    newUser(target.value, "username");
+    setUsername(target.value);
   };
 
   const onInputPasswordChange = ({ target }) => {
     setPassword(target.value);
-    if(password==confirmPassword){
-        newUser(target.value, "password");
+    if (password == confirmPassword) {
+      newUser(target.value, "password");
     }
   };
   const onInputConfirmPasswordChange = ({ target }) => {
@@ -23,9 +29,8 @@ const SignUpFields = ({ newUser }) => {
 
   const onInputEmailChange = ({ target }) => {
     setEmail(target.value);
-    newUser(target.value,'email');
+    newUser(target.value, "email");
   };
-  
 
   return (
     <form>
@@ -50,15 +55,17 @@ const SignUpFields = ({ newUser }) => {
           onChange={onInputEmailChange}
         ></input>
       </div>
-      
+
       <h6 className={SignUpFieldsStyle.title}>Trainer Username</h6>
-            <div className={SignUpFieldsStyle.inputSpace}>
-                <input
-                type='text'
-                placeholder='Write a trainer username here'
-                className={SignUpFieldsStyle.field}
-                ></input>
-            </div>
+      <div className={SignUpFieldsStyle.inputSpace}>
+        <input
+          type="text"
+          placeholder="Write a trainer username here"
+          className={SignUpFieldsStyle.field}
+          value={username}
+          onChange={onInputUsernameChange}
+        ></input>
+      </div>
 
       <h6 className={SignUpFieldsStyle.title}>Password</h6>
       <div className={SignUpFieldsStyle.inputSpace}>
