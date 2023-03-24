@@ -14,9 +14,6 @@ const StatValue = (props) => {
         emptyCircles.push("");
     }
 
-    console.log(emptyCircles);
-    console.log(filledCircles);
-
     return(
         <>
         <h3 className={StatValueStyle.statName}>{props.name}</h3> 

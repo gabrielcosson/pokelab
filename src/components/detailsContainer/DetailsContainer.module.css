@@ -24,20 +24,14 @@
 }
 
 .name{
-    color: red;
+    color: rgb(141, 0, 0);
     font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 300;
-    font-size: 50px;
+    font-weight: 200;
+    font-size: 60px;
     margin-left: 30px;
     text-align: center;
 }
 
-.type{
-    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 50px;
-    margin-right: 50px;
-}
 
 .detailsContainer{
     width: 100%;
@@ -83,8 +77,4 @@
 
 h1{
     color: white;
-}
-
-.typeImage{
-    height: 50px;
 }
