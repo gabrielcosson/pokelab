@@ -14,7 +14,7 @@ const Home = () => {
     resultes: [],
   });
   const { data, isLoadin, hasError } = useFetchGet(
-    "http://localhost:8080/pokedex/pokemon?quantity=12&offset=70"
+    "http://localhost:8080/pokedex/pokemon?quantity=12&offset=90"
   );
   if (!isLoadin) {
     console.log(data);
