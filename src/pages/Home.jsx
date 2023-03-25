@@ -3,8 +3,7 @@ import SearchLanguage from "../components/searchLanguage/SearchLanguage";
 import InHeader from "../components/inHeader/InHeader";
 import PokemonList from "../components/pokemonList/PokemonList";
 import useFetchGet from "../hooks/useFetchGet";
-
-import React from "react";
+import Spinner from "../components/spinner/Spinner";
 
 const Home = () => {
   const { getFetch } = useFetchGet();
@@ -13,18 +12,15 @@ const Home = () => {
     quantity: 0,
     resultes: [],
   });
-  const { data, isLoadin, hasError } = useFetchGet(
-    "http://localhost:8080/pokedex/pokemon?quantity=12&offset=90"
-  );
-  if (!isLoadin) {
-    console.log(data);
-  }
+  
+  const { data, isLoadin, hasError } = useFetchGet("http://localhost:8080/pokedex/pokemon?quantity=50&offset=100");
 
   return (
     <>
       <InHeader></InHeader>
       <SearchLanguage></SearchLanguage>
-      {(isLoadin) === false && <PokemonList data = {data}></PokemonList>}      
+      {(isLoadin) === true && <Spinner></Spinner>} 
+      {(isLoadin) === false && <PokemonList data = {data}></PokemonList>} 
     </>
   );
 };
