@@ -7,16 +7,16 @@ import SignUp from './SignUp.jsx';
 
 class LogIn extends Component{
     render(){
-        return(
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/logIn" element = {<LogInStructure />}/>
-                    <Route path="/signUp/*" element = {<SignUp />} />
-                    <Route path="/home/*" element = {<Home />} />
-                    <Route path="/details/*" element = {<Details />} />
-                </Routes>
-            </BrowserRouter>
-        )
+        return (
+          <BrowserRouter>
+            <Routes>
+              <Route path="/logIn" element={<LogInStructure />} />
+              <Route path="/signUp/*" element={<SignUp />} />
+              <Route path="/home/*" element={<Home />} />
+              <Route path="/details/*" element={<Details/>} />
+            </Routes>
+          </BrowserRouter>
+        );
     }
 }
 

@@ -8,9 +8,12 @@ const useFetchGet = (baseURL) => {
   });
   const getFetch = async () => {
     setState({ ...state, isLoadin: true });
-    const resp = await axios.get(baseURL).then((response) => {
+    try{
+      const resp = await axios.get(baseURL).then((response) => {
       setState({ data: response.data, isLoadin: false, hasError: null });
     });
+    }catch(error){ console.log(error)}
+    
   };
   useEffect(() => {
     getFetch();

@@ -12,15 +12,17 @@ const Home = () => {
     quantity: 0,
     resultes: [],
   });
-  
-  const { data, isLoadin, hasError } = useFetchGet("http://localhost:8080/pokedex/pokemon?quantity=50&offset=100");
+
+  const { data, isLoadin, hasError } = useFetchGet(
+    "http://localhost:8080/pokedex/pokemon?quantity=12&offset=100"
+  );
 
   return (
     <>
       <InHeader></InHeader>
       <SearchLanguage></SearchLanguage>
-      {(isLoadin) === true && <Spinner></Spinner>} 
-      {(isLoadin) === false && <PokemonList data = {data}></PokemonList>} 
+      {isLoadin === true && <Spinner></Spinner>}
+      {isLoadin === false && <PokemonList data={data}></PokemonList>}
     </>
   );
 };
