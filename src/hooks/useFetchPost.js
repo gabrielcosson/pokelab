@@ -7,7 +7,7 @@ const useFetchPost = () => {
     isLoadin: true,
     hasError: null,
   });
-  const getFetch = async (baseURL, body, header) => {
+  const postFetch = async (baseURL, body, header) => {
      setState({ ...state, isLoadin: true });
      const resp = await axios.post(baseURL, body).then((response) => {
        setState({ data: response.data, isLoadin: false, hasError: null });
@@ -19,7 +19,7 @@ const useFetchPost = () => {
        hasError: state.hasError,
      };
    };
-  return { getFetch };
+  return { postFetch };
 };
 export default useFetchPost;
 

@@ -19,12 +19,11 @@ const SignUpFields = ({ newUser }) => {
 
   const onInputPasswordChange = ({ target }) => {
     setPassword(target.value);
-    if (password == confirmPassword) {
-      newUser(target.value, "password");
-    }
+    newUser(target.value, "password");
   };
   const onInputConfirmPasswordChange = ({ target }) => {
     setConfirmPassword(target.value);
+    newUser(target.value, "confirmPassword");
   };
 
   const onInputEmailChange = ({ target }) => {
