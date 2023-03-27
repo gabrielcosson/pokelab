@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 import Spinner from '../components/spinner/Spinner';
 import InHeader from '../components/inHeader/InHeader';
 
-const Details = ({pokemonName,language})=>{
+const Details = ()=>{
+
+  const language = window.location.pathname.substring(9,11);
+  const pokemonName = window.location.pathname.substring(11);
+
   const { data, isLoadin, hasError } = useFetchGet(
     `http://localhost:8080/pokedex/${language}/pokemon?value=${pokemonName}`
   );
@@ -21,16 +25,6 @@ const Details = ({pokemonName,language})=>{
       {isLoadin === false && isLoadinEvolution === false && <DetailsStructure data = {data} dataEvolution = {dataEvolution}></DetailsStructure>}
     </>
   );
-}
-
-Details.propTypes = {
-    pokemonName: PropTypes.string.isRequired,
-    language: PropTypes.string.isRequired
-}
-
-Details.defaultProps = {
-    pokemonName: 'charizard',
-    language: 'en'
 }
 
 export default Details;
