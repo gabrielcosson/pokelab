@@ -6,27 +6,27 @@ const Stats = (props) => {
       <>
         <h2 className={StatsStyle.statsTitle}>Stats</h2>
         <div className={StatsStyle.individualStat}>
-            <StatValue name= "Health" value = {props.details.stats.health}></StatValue>
+            <StatValue name= "Health" value = {props.data.stats.health}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <StatValue name= "Attack" value = {props.details.stats.attack}></StatValue>
+            <StatValue name= "Attack" value = {props.data.stats.attack}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <StatValue name= "Defense" value = {props.details.stats.defense}></StatValue>
+            <StatValue name= "Defense" value = {props.data.stats.defense}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <StatValue name= "Special Attack" value = {props.details.stats.specialAttack}></StatValue>
+            <StatValue name= "Special Attack" value = {props.data.stats.specialAttack}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <StatValue name= "Special Defense" value = {props.details.stats.specialDefense}></StatValue>
+            <StatValue name= "Special Defense" value = {props.data.stats.specialDefense}></StatValue>
         </div>
 
         <div className={StatsStyle.individualStat}>
-            <StatValue name= "Speed" value = {props.details.stats.speed}></StatValue>
+            <StatValue name= "Speed" value = {props.data.stats.speed}></StatValue>
         </div></>
     );
 };

@@ -1,5 +1,4 @@
 import DetailsContainer from '../detailsContainer/DetailsContainer';
-import InHeader from '../inHeader/InHeader';
 import LanguageOptions from '../languageOptions/LanguageOptions';
 import DetailsStructureStyle from './DetailsStructure.module.css';
 
@@ -7,7 +6,6 @@ import DetailsStructureStyle from './DetailsStructure.module.css';
 const DetailsStructure = (props) => {
     return(
         <>
-            <InHeader></InHeader>
             <div className={DetailsStructureStyle.detailsHeader}>
                 <div className={DetailsStructureStyle.titleContainer}>
                     <h1 className={DetailsStructureStyle.title}>Pokedex</h1>
@@ -16,8 +14,7 @@ const DetailsStructure = (props) => {
                     <LanguageOptions></LanguageOptions>
                 </div>
             </div>
-            <DetailsContainer></DetailsContainer>
-
+            <DetailsContainer data = {props.data} dataEvolution = {props.dataEvolution}></DetailsContainer>
         </>
     );
 };

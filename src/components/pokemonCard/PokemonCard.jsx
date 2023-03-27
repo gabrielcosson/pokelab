@@ -8,7 +8,7 @@ const PokemonCard = (props) => {
             <h1 className={PokemonCardStyle.name}>{props.name.charAt(0).toUpperCase()+props.name.substr(1,12).toLowerCase()}</h1>
             <img className = {PokemonCardStyle.image} src={props.image}/>
             <div className={PokemonCardStyle.typeContainer}>
-            {(props.types).map(type => <TypeCard type={type}></TypeCard>)}
+            {(props.types).map(type => <TypeCard key = {type} type={type}></TypeCard>)}
             </div>
         </div>
     );

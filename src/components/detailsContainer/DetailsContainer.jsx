@@ -1,5 +1,4 @@
 import DetailsContainerStyle from './DetailsContainer.module.css';
-import Details from '../../../details.json';
 import Description from '../description/Description';
 import Stats from '../stats/Stats';
 import Skills from '../skills/Skills';
@@ -11,28 +10,28 @@ const DetailsContainer = (props) => {
         <div className={DetailsContainerStyle.container}>
             <div className={DetailsContainerStyle.nameTypeContainer}>
                 <div className={DetailsContainerStyle.nameContainer}>
-                    <h1 className={DetailsContainerStyle.name}>{Details.name}</h1>
+                    <h1 className={DetailsContainerStyle.name}>{props.data.name.charAt(0).toUpperCase() + props.data.name.substr(1).toLowerCase()}</h1>
                 </div>
                 <div className={DetailsContainerStyle.typeContainer}>
-                    {(Details.types).map(type => <TypeContainer type = {type}></TypeContainer>)}
+                    {(props.data.type).map(type => <TypeContainer key = {type.replace(/\s/g, "")} type = {type.replace(/\s/g, "")}></TypeContainer>)}
                 </div>
             </div>
 
             <div className={DetailsContainerStyle.detailsContainer}>
                 <div className={DetailsContainerStyle.firstColumn}>
                     <div className={DetailsContainerStyle.imageContainer}>
-                        <img className={DetailsContainerStyle.image} src={Details.image}></img>
+                        <img className={DetailsContainerStyle.image} src={props.data.img_path}></img>
                     </div>
-                    <Description details = {Details}></Description>
+                    <Description data = {props.data}></Description>
                 </div>
 
                 <div className={DetailsContainerStyle.secondColumn}>
-                    <Stats details = {Details}></Stats>
+                    <Stats data = {props.data}></Stats>
                 </div>
 
                 <div className={DetailsContainerStyle.thirdColumn}>
-                    <Skills details = {Details}></Skills>
-                    <Evolution details = {Details}></Evolution>
+                    <Skills data = {props.data}></Skills>
+                    <Evolution data = {props.data} dataEvolution = {props.dataEvolution}></Evolution>
                 </div>
             </div>
 
