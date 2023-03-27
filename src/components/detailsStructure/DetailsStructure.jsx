@@ -11,7 +11,7 @@ const DetailsStructure = (props) => {
                     <h1 className={DetailsStructureStyle.title}>Pokedex</h1>
                 </div>
                 <div className={DetailsStructureStyle.languageContainer}>
-                    <LanguageOptions></LanguageOptions>
+                    <LanguageOptions pokemonName = {props.data.name}></LanguageOptions>
                 </div>
             </div>
             <DetailsContainer data = {props.data} dataEvolution = {props.dataEvolution}></DetailsContainer>

@@ -9,11 +9,9 @@ const PokemonList = (props) => {
         <>
             <div className={PokemonListStyle.listHeader}>
                 <div className={PokemonListStyle.titleContainer}>
-                    <h1 className={PokemonListStyle.title}> <Link to="/details">Pokedex</Link></h1>
+                    <h1 className={PokemonListStyle.title}>Pokedex</h1>
                 </div>
-                <div className={PokemonListStyle.paginationContainer}>
-                    <Pagination></Pagination>
-                </div>
+
             </div>
             <div className={PokemonListStyle.container}>
                 {Object.values(props.data.results).map(pokemon => 

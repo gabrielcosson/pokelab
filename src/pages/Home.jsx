@@ -1,5 +1,5 @@
 import { Component, useEffect, useState } from "react";
-import SearchLanguage from "../components/searchLanguage/SearchLanguage";
+import SearchPagination from "../components/searchPagination/SearchPagination";
 import InHeader from "../components/inHeader/InHeader";
 import PokemonList from "../components/pokemonList/PokemonList";
 import useFetchGet from "../hooks/useFetchGet";
@@ -14,13 +14,13 @@ const Home = () => {
   });
  
   const { data, isLoadin, hasError } = useFetchGet(
-    "http://localhost:8080/pokedex/pokemon?quantity=12&offset=100"
+    "http://localhost:8080/pokedex/pokemon?quantity=12&offset=0"
   );
 
   return (
     <>
       <InHeader></InHeader>
-      <SearchLanguage></SearchLanguage>
+      <SearchPagination></SearchPagination>
       {isLoadin === true && <Spinner></Spinner>}
       {isLoadin === false && <PokemonList data={data}></PokemonList>}
     </>
