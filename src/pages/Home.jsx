@@ -12,7 +12,7 @@ const Home = () => {
     quantity: 0,
     resultes: [],
   });
-
+ 
   const { data, isLoadin, hasError } = useFetchGet(
     "http://localhost:8080/pokedex/pokemon?quantity=12&offset=100"
   );

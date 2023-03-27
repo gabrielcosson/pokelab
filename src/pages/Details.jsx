@@ -6,7 +6,6 @@ import Spinner from '../components/spinner/Spinner';
 import InHeader from '../components/inHeader/InHeader';
 
 const Details = ({pokemonName,language})=>{
-    
   const { data, isLoadin, hasError } = useFetchGet(
     `http://localhost:8080/pokedex/${language}/pokemon?value=${pokemonName}`
   );
