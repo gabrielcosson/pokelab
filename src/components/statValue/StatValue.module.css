@@ -22,16 +22,16 @@
 }
 
 .filled{
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     background-color: #0090d3;
     border-radius: 100%;
     box-shadow: 2px 2px 5px black;
 }
 
 .empty{
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     background-color: gray;
     border-radius: 100%;
     box-shadow: 2px 2px 5px black;

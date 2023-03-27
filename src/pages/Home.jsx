@@ -4,6 +4,7 @@ import InHeader from "../components/inHeader/InHeader";
 import PokemonList from "../components/pokemonList/PokemonList";
 import useFetchGet from "../hooks/useFetchGet";
 import Spinner from "../components/spinner/Spinner";
+import HomeStructure from "../components/homeStructure/HomeStructure";
 
 const Home = () => {
   const { getFetch } = useFetchGet();
@@ -28,3 +29,4 @@ const Home = () => {
 };
 
 export default Home;
+/**/

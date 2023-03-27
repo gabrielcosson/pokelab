@@ -20,16 +20,7 @@ export const LogInContainer = (props) => {
   const { postFetch } = useFetchPost();
 
   const validateInfo = () => {
-    /* console.log(
-      "ESTA ES LA INFO ",
-      //getFetch("http://localhost:8080/pokedex/auth/logIn", user, "")
-    ); */
-
-    const statusPerson = postFetch(
-      "http://localhost:8080/pokedex/auth/logIn",
-      user,
-      ""
-    );
+    const statusPerson = postFetch("http://localhost:8080/pokedex/auth/logIn", user, "");
     console.log(statusPerson);
   };
     
