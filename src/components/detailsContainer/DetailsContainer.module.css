@@ -41,22 +41,21 @@
 }
 
 .firstColumn{
-    height: 97%;
+    height: 95%;
     width: 33%;
     margin: 1%;
 }
 
 .secondColumn{
-    height: 97%;
+    height: 95%;
     width: 33%;
     margin: 1%;
 }
 
 .thirdColumn{
-    height: 97%;
+    height: 95%;
     width: 33%;
     margin: 1%;
-
 }
 
 .imageContainer{
@@ -69,6 +68,7 @@
 
 .image{
     height: 95%;
+    width: 75%;
     background-color: white;
     border-radius: 100%;
     box-shadow: 5px 5px 15px black;
