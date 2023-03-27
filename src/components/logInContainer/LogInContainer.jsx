@@ -1,7 +1,7 @@
 import LogInContainerStyle from "./LogInContainer.module.css";
 import LogInFields from "../logInFields/LogInFields";
 import { Link } from "react-router-dom";
-import buttonIcon from "../../assets/login.png";
+import log from "../../assets/log.png";
 import useFetchPost  from "../../hooks/useFetchPost";
 import { useState } from "react";
 
@@ -31,7 +31,7 @@ export const LogInContainer = (props) => {
             <LogInFields newUser={gettingInfoForm}></LogInFields>
             <button onClick={() => validateInfo()}>
               <div className={LogInContainerStyle.button}>
-                <img alt="logIn.png" className={LogInContainerStyle.buttonIcon} src={buttonIcon}/>
+                <img alt="logIn.png" className={LogInContainerStyle.buttonIcon} src={log}/>
                 <h1 className={LogInContainerStyle.buttonText}>LOG IN</h1>
               </div>
             </button>

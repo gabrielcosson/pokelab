@@ -1,11 +1,11 @@
 .container{
-    height: 19vh;
-    width: 19%;
+    height: 20vh;
+    width: 19.5%;
     border-radius: 25px;
-    margin: 35px;
+    margin-left: 2%;
+    margin-right: 3%;
     position: relative;
-    margin-bottom: 41px;
-    margin-top: 0;
+    margin-bottom: 2%;
     display: inline-block;
 }
 
@@ -25,10 +25,10 @@
 
 .image{
     position: absolute;
-    width: 140px;
-    height: 140px;
-    top: 30px;
-    left: 170px;
+    width: 45%;
+    height: 100%;
+    top: 15%;
+    left: 70%;
 }
 
 .typeContainer{
