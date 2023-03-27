@@ -18,6 +18,7 @@ const PokemonList = (props) => {
             <div className={PokemonListStyle.container}>
                 {Object.values(props.data.results).map(pokemon => 
                     <PokemonCard 
+                        key = {pokemon.id}
                         name = {pokemon.name} 
                         image = {pokemon.img_path}
                         mainType = {pokemon.types[0]}
