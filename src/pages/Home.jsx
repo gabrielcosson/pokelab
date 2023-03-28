@@ -1,9 +1,5 @@
-import { Component, useEffect, useState } from "react";
-import SearchPagination from "../components/searchPagination/SearchPagination";
 import InHeader from "../components/inHeader/InHeader";
-import PokemonList from "../components/pokemonList/PokemonList";
-import useFetchGet from "../hooks/useFetchGet";
-import Spinner from "../components/spinner/Spinner";
+import HomeStructure from "../components/homeStructure/HomeStructure";
 
 const Home = ({ type = "fire" }) => {
   const { getFetch } = useFetchGet();
@@ -16,7 +12,6 @@ const Home = ({ type = "fire" }) => {
   const { data, isLoadin, hasError } = useFetchGet(
     "http://localhost:8080/pokedex/pokemon?quantity=12&offset=0"
   );
-
   const {
     data: dataType,
     isLoadin: isLoadinType,
@@ -28,9 +23,7 @@ const Home = ({ type = "fire" }) => {
   return (
     <>
       <InHeader></InHeader>
-      <SearchPagination></SearchPagination>
-      {isLoadin === true && <Spinner></Spinner>}
-      {isLoadin === false && <PokemonList data={data}></PokemonList>}
+      <HomeStructure></HomeStructure>
     </>
   );
 };

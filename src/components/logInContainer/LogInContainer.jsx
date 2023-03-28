@@ -18,6 +18,7 @@ export const LogInContainer = (props) => {
     if (passwordBool) setUser({ ...user, password: data });
   };
 
+
   const { postFetch, data, isLoading, hasError } = useFetchPost();
   const navigate = useNavigate();
   const validateInfo = async () => {
