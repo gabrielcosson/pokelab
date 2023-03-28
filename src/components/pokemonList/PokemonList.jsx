@@ -23,6 +23,7 @@ const PokemonList = (props) => {
                         image = {pokemon.img_path}
                         mainType = {pokemon.types[0]}
                         types = {pokemon.types}
+                        typesInLanguage = {pokemon.typesInLanguage}
                     ></PokemonCard>)}
             </div>
         </>
