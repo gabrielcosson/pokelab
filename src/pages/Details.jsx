@@ -4,6 +4,8 @@ import useFetchGet from "../hooks/useFetchGet";
 import PropTypes from 'prop-types';
 import Spinner from '../components/spinner/Spinner';
 import InHeader from '../components/inHeader/InHeader';
+import { useEffect, useState } from "react";
+
 
 const Details = ()=>{
 

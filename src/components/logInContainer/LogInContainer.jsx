@@ -1,7 +1,7 @@
 import LogInContainerStyle from "./LogInContainer.module.css";
 import LogInFields from "../logInFields/LogInFields";
 import { Link, useNavigate } from "react-router-dom";
-import buttonIcon from "../../assets/login.png";
+import buttonIcon from "../../assets/log.png";
 import useFetchPost from "../../hooks/useFetchPost";
 import { useState } from "react";
 
