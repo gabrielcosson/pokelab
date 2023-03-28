@@ -22,20 +22,20 @@ const SignUpContainer = (props) => {
     else if (type === 'confirmPassword') setUser({ ...user, confirmPassword: data });
     
   };
-   const { postFetch } = useFetchPost();
+   const { postFetch, data, isLoading, hasError } = useFetchPost();
 
-    const validateInfo = () => {
+    const validateInfo = async () => {
       if(user.password === user.confirmPassword){
         const validatedUser = {
           ...user
         }
         delete validatedUser.confirmPassword;
-        const statusPerson = postFetch(
+        await postFetch(
           "http://localhost:8080/pokedex/auth/signUp",
           validatedUser,
           ""
         );
-        console.log(statusPerson.all());
+        console.log(data);
       }else{
         console.log('passwords missmatch');
       }

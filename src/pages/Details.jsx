@@ -17,7 +17,6 @@ const Details = ()=>{
   const {data: dataEvolution, isLoadin: isLoadinEvolution, hasError: hasErrorEvolution } = useFetchGet(
     `http://localhost:8080/pokedex/${language}/pokemon/evolution-chain?name=${pokemonName}`
   );
-    
   return (
     <>
       <InHeader></InHeader>
