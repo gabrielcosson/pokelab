@@ -1,6 +1,6 @@
 import SearchLanguageStyle from './SearchLanguage.module.css';
 import SearchBar from '../searchBar/SearchBar';
-import LanguageOptions from '../languageOptions/LanguageOptions'
+import LanguageHome from '../languagesHome/LanguageHome';
 
 const SearchLanguage = (props) => {
     return(
@@ -9,7 +9,7 @@ const SearchLanguage = (props) => {
                 <SearchBar></SearchBar>
             </div>
             <div className={SearchLanguageStyle.languages}>
-                <LanguageOptions></LanguageOptions>
+                <LanguageHome></LanguageHome>
             </div>
         </div>
     );

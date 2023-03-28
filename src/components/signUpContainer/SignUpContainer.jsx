@@ -35,9 +35,16 @@ const SignUpContainer = (props) => {
           validatedUser,
           ""
         );
-        console.log(data);
+        if (isLoading) {
+          console.log("esta cargando");
+        }
+        if (hasError !== null || data === null) {
+          console.warn("Este es el error ", hasError);
+          return;
+        }
+        alert("Usuario creado correctamente ", { data });
       }else{
-        console.log('passwords missmatch');
+        alert('passwords missmatch');
       }
       
     };

@@ -5,25 +5,8 @@ import { useContext } from "react";
 import { BurgerMenuContext } from "../context/burgerMenuContext";
 
 const InHeader = (props) => {
-  const {
-    widthBurgerMenu,
-    widthList,
-    setWidthBurgerMenu,
-    setWidthList,
-    widthActive,
-    setWidthActive,
-  } = useContext(BurgerMenuContext);
-  const display = () => {
-    if (widthActive) {
-      setWidthBurgerMenu({ width: `0%` });
-      setWidthList({ width: `100%` });
-      setWidthActive(false);
-    } else {
-      setWidthBurgerMenu({ width: `20%` });
-      setWidthList({ width: `80%` });
-      setWidthActive(true);
-    }
-  };
+  const { display } = useContext(BurgerMenuContext);
+
   return (
     <div className={InHeaderStyle.header}>
       <div className={InHeaderStyle.menu}>

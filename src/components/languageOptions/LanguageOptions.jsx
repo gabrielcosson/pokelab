@@ -4,7 +4,6 @@ import LanguageOptionsStyle from "./LanguageOptions.module.css";
 const LanguageOptions = (props) => {
   const navigate = useNavigate();
   const { lan, pokemon, ...rest } = useParams();
-  console.log();
   const onPath = () => {
     navigate(`/details/en/${props.pokemonName}`);
   };
@@ -16,7 +15,7 @@ const LanguageOptions = (props) => {
       <Link to={`/details/es/${pokemon}`}>
         <div className={LanguageOptionsStyle.spanish}></div>
       </Link>
-      <Link to={`/details/ge/${pokemon}`}>
+      <Link to={`/details/de/${pokemon}`}>
         <div className={LanguageOptionsStyle.german}></div>
       </Link>
       <Link to={`/details/ja/${pokemon}`}>

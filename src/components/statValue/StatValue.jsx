@@ -14,15 +14,19 @@ const StatValue = (props) => {
         emptyCircles.push("");
     }
 
-    return(
-        <>
-        <h3 className={StatValueStyle.statName}>{props.name}</h3> 
+    return (
+      <>
+        <h3 className={StatValueStyle.statName}>{props.name}</h3>
         <div className={StatValueStyle.valueContainer}>
-            {filledCircles.map(filledCircle => <div className={StatValueStyle.filled}></div>)}
-            {emptyCircles.map(emptyCircle => <div className={StatValueStyle.empty}></div>)}
-            <h1 className={StatValueStyle.value}>{props.value}</h1>    
+          {filledCircles.map((filledCircle, index) => (
+            <div className={StatValueStyle.filled} key={index}></div>
+          ))}
+          {emptyCircles.map((emptyCircle,index) => (
+            <div className={StatValueStyle.empty} key={index}></div>
+          ))}
+          <h1 className={StatValueStyle.value}>{props.value}</h1>
         </div>
-        </>
+      </>
     );
 };
 

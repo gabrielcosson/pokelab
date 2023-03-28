@@ -3,7 +3,7 @@ import LogInFields from "../logInFields/LogInFields";
 import { Link, useNavigate } from "react-router-dom";
 import buttonIcon from "../../assets/log.png";
 import useFetchPost from "../../hooks/useFetchPost";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 export const LogInContainer = (props) => {
   const [user, setUser] = useState({
@@ -19,6 +19,7 @@ export const LogInContainer = (props) => {
   };
 
 
+
   const { postFetch, data, isLoading, hasError } = useFetchPost();
   const navigate = useNavigate();
   const validateInfo = async () => {
@@ -28,13 +29,15 @@ export const LogInContainer = (props) => {
     if (isLoading) {
       console.log("esta cargando");
     }
-    if (hasError !== null || data === null) {
+    if (hasError !== null && data === null) {
       console.warn("Este es el error ", hasError);
       return;
     }
     console.log("adentro ", { data });
-    navigate(`/home`);
+    navigate(`/home/es`);
   };
+
+  console.log(submitting);
 
   return (
     <div className={LogInContainerStyle.container}>
@@ -43,7 +46,7 @@ export const LogInContainer = (props) => {
         Doesn't have an account yet? <Link to="/signUp">Sign Up</Link>
       </h5>
       <LogInFields newUser={gettingInfoForm}></LogInFields>
-      <button onClick={() => validateInfo()} disabled={submitting}>
+      <button onClick={validateInfo} disabled={submitting}>
         <div className={LogInContainerStyle.button}>
           <img
             alt="logIn.png"

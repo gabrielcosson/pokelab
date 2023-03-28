@@ -3,18 +3,15 @@ import { BurgerMenuContext } from './burgerMenuContext'
 
 const BurgerMenuProvider = ({
   children,
-  widthBurgerMenu,
-  widthList,
   setWidthBurgerMenu,
   setWidthList,
   widthActive,
   setWidthActive,
 }) => {
+  console.log(setWidthBurgerMenu);
   return (
     <BurgerMenuContext.Provider
       value={{
-        widthBurgerMenu,
-        widthList,
         setWidthBurgerMenu,
         setWidthList,
         widthActive,
