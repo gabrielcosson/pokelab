@@ -12,8 +12,8 @@ class LogIn extends Component{
             <Routes>
               <Route path="/logIn" element={<LogInStructure />} />
               <Route path="/signUp/*" element={<SignUp />} />
-              <Route path="/home/*" element={<Home />} />
-              <Route path="/details/:lan/:pokemon" element={<Details/>} />
+              <Route path="/home/:language" element={<Home />} />
+              <Route path="/details/:language/:pokemon" element={<Details/>} />
             </Routes>
           </BrowserRouter>
         );
