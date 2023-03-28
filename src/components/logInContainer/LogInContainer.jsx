@@ -12,6 +12,8 @@ export const LogInContainer = (props) => {
   });
 
   const [submitting, setSubmitting] = useState(false);
+  const [errorStatus, setErrorStatus] = useState("");
+
 
   const gettingInfoForm = (data, emailBool, passwordBool) => {
     if (emailBool) setUser({ ...user, email: data });
@@ -22,19 +24,23 @@ export const LogInContainer = (props) => {
 
   const { postFetch, data, isLoading, hasError } = useFetchPost();
   const navigate = useNavigate();
+
   const validateInfo = async () => {
     setSubmitting(true);
+
     await postFetch("http://localhost:8080/pokedex/auth/logIn", user, "");
+
     setSubmitting(false);
     if (isLoading) {
       console.log("esta cargando");
     }
     if (hasError !== null && data === null) {
       console.warn("Este es el error ", hasError);
+      setErrorStatus(hasError.response.data.message)
       return;
     }
-    console.log("adentro ", { data });
-    navigate(`/home/es`);
+    navigate(`/home/en`, {state:{data}});
+
   };
 
   console.log(submitting);
@@ -46,15 +52,14 @@ export const LogInContainer = (props) => {
         Doesn't have an account yet? <Link to="/signUp">Sign Up</Link>
       </h5>
       <LogInFields newUser={gettingInfoForm}></LogInFields>
-      <button onClick={validateInfo} disabled={submitting}>
-        <div className={LogInContainerStyle.button}>
+      <h1 className={LogInContainerStyle.errorMessage}>{errorStatus}</h1>
+      <button onClick={() => validateInfo()} disabled={submitting} className={LogInContainerStyle.button}>
           <img
             alt="logIn.png"
             className={LogInContainerStyle.buttonIcon}
             src={buttonIcon}
           />
           <h1 className={LogInContainerStyle.buttonText}>LOG IN</h1>
-        </div>
       </button>
     </div>
   );

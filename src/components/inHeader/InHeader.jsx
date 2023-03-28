@@ -10,12 +10,8 @@ const InHeader = (props) => {
   return (
     <div className={InHeaderStyle.header}>
       <div className={InHeaderStyle.menu}>
-        <img
-          className={InHeaderStyle.hamburger}
-          src={hamburgerIcon}
-          onClick={display}
-        ></img>
-        <h1 className={InHeaderStyle.greet}>Welcome Gabriel!</h1>
+        <img className={InHeaderStyle.hamburger} src={hamburgerIcon} onClick={display}></img>
+        <h1 className={InHeaderStyle.greet}>Welcome <span className={InHeaderStyle.username}>{props.username}!</span></h1>
       </div>
       <div className={InHeaderStyle.logoContainer}>
         <img className={InHeaderStyle.logo} src={logo}></img>

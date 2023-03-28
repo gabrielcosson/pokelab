@@ -21,16 +21,15 @@ const HomeStructure = (props) => {
   const { widthBurgerMenu, widthList } = useContext(BurgerMenuContext);
   return (
     <>
-      <InHeader></InHeader>
+      <InHeader username = {props.userInfo.username}></InHeader>
       <div className={HomeStructureStyle.complete}>
         <div className={HomeStructureStyle.burgerMenu} style={widthBurgerMenu}>
-          <BurgerMenu></BurgerMenu>
+          <BurgerMenu userName = {props.userInfo.name} userRole = {props.userInfo.role}></BurgerMenu>
         </div>
         <div className={HomeStructureStyle.pokemonList} style={widthList}>
           <SearchLanguage></SearchLanguage>
           {isLoadin === true && <Spinner></Spinner>}
-          {isLoadin === false && (
-            <PokemonList data={data}></PokemonList>
+          {isLoadin === false && (<PokemonList data={data}></PokemonList>
           )}
         </div>
       </div>
