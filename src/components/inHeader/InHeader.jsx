@@ -7,7 +7,7 @@ const InHeader = (props) => {
         <div className={InHeaderStyle.header}>
             <div className={InHeaderStyle.menu}>
                 <img className={InHeaderStyle.hamburger} src={hamburgerIcon}></img>
-                <h1 className={InHeaderStyle.greet}>Welcome Gabriel!</h1>
+                <h1 className={InHeaderStyle.greet}>Welcome <span className={InHeaderStyle.username}>{props.username}!</span></h1>
             </div>
             <div className={InHeaderStyle.logoContainer}><img className={InHeaderStyle.logo} src={logo}></img></div>
             <div></div>

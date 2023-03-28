@@ -18,13 +18,13 @@ const BurgerMenu = (props) => {
                 <img className={BurgerMenuStyle.userImage} src={userImage}></img>
             </div>
 
-            <h1 className={BurgerMenuStyle.userName}>Gabriel Nieves</h1>
+            <h1 className={BurgerMenuStyle.userName}>{props.userName}</h1>
 
             <div className={BurgerMenuStyle.roleContainer}>
                 <img className={BurgerMenuStyle.arrowBeginning} src={arrow}></img>
                 <div className={BurgerMenuStyle.role}>
                     <img className={BurgerMenuStyle} src={pokeball}></img>
-                    <h1 className={BurgerMenuStyle.userName}>TRAINER</h1>
+                    <h1 className={BurgerMenuStyle.userName}>{props.userRole}</h1>
                 </div>
                 <img className={BurgerMenuStyle.arrowEnd} src={arrow}></img>
             </div>
@@ -69,11 +69,6 @@ const BurgerMenu = (props) => {
                 <img src={log}></img>
                 <Link to = "/logIn"><h1>Log Out</h1></Link>
             </div>
-
-
-
-
-            
         </div>
     );
 };
