@@ -2,7 +2,7 @@ import SearchPaginationStyle from './SearchPagination.module.css';
 import SearchBar from '../searchBar/SearchBar';
 import Pagination from '../pagination/Pagination';
 
-const SearchLanguage = (props) => {
+const SearchPagination = (props) => {
     return(
         <div className={SearchPaginationStyle.container}>
             <div className={SearchPaginationStyle.searchBar}>
@@ -13,4 +13,4 @@ const SearchLanguage = (props) => {
     );
 };
 
-export default SearchLanguage;
+export default SearchPagination;

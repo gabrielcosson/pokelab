@@ -13,10 +13,10 @@
 }
 
 .userImage{
-    width: 150px;
-    height: 150px;
+    width: 50%;
     background-color: white;
     border-radius: 100%;
+    box-shadow: 5px 5px 5px black;
 }
 
 .userName{

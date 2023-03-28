@@ -1,10 +1,10 @@
 import HomeStructureStyle from './HomeStructure.module.css';
 import { Component, useEffect, useState } from "react";
-import SearchPagination from "../../components/searchPagination/SearchPagination";
 import Spinner from "../../components/spinner/Spinner";
 import PokemonList from "../../components/pokemonList/PokemonList";
 import useFetchGet from "../../hooks/useFetchGet";
 import BurgerMenu from '../burgerMenu/BurgerMenu';
+import SearchLanguage from '../searchLanguage/SearchLanguage';
 
 const HomeStructure = (props) => {
     const { getFetch } = useFetchGet();
@@ -19,11 +19,11 @@ const HomeStructure = (props) => {
         <>
         
         <div className={HomeStructureStyle.complete}>
-            <div className={HomeStructureStyle.burgerMenu} style={{width: "20%"}}>
+            <div className={HomeStructureStyle.burgerMenu} style={{width: "0%"}}>
                 <BurgerMenu></BurgerMenu>
             </div>
-            <div className={HomeStructureStyle.pokemonList} style={{width: "80%"}}>
-                <SearchPagination></SearchPagination>
+            <div className={HomeStructureStyle.pokemonList} style={{width: "100%"}}>
+                <SearchLanguage></SearchLanguage>
                 {isLoadin === true && <Spinner></Spinner>}
                 {isLoadin === false && <PokemonList data={data}></PokemonList>}
             </div>
