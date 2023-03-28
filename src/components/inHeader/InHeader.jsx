@@ -2,8 +2,6 @@ import InHeaderStyle from './InHeader.module.css';
 import hamburgerIcon from '../../assets/hamburger-menu.png'
 import logo from '../../assets/logo.png'
 
-
-
 const InHeader = (props) => {
     return(
         <div className={InHeaderStyle.header}>
