@@ -18,13 +18,15 @@ const HomeStructure = (props) => {
   const { data, isLoadin, hasError } = useFetchGet(
     `http://localhost:8080/pokedex/pokemon?quantity=12&offset=89&language=${language}`
   );
+  
   const { widthBurgerMenu, widthList } = useContext(BurgerMenuContext);
+
   return (
     <>
-      <InHeader username = {props.userInfo.username}></InHeader>
+      <InHeader username = "gabrielnieves"></InHeader>
       <div className={HomeStructureStyle.complete}>
         <div className={HomeStructureStyle.burgerMenu} style={widthBurgerMenu}>
-          <BurgerMenu userName = {props.userInfo.name} userRole = {props.userInfo.role}></BurgerMenu>
+          <BurgerMenu userName = "Gabriel" userRole = "TRAINER"></BurgerMenu>
         </div>
         <div className={HomeStructureStyle.pokemonList} style={widthList}>
           <SearchLanguage></SearchLanguage>

@@ -13,7 +13,8 @@ const LogIn = () => {
     const [widthActive, setWidthActive] = useState(false);
     const [connect, setConnect] = useState(false);
     const display = () => {
-    if (widthActive) {
+    
+      if (widthActive) {
       setWidthBurgerMenu({ width: `0%` });
       setWidthList({ width: `100%` });
       setWidthActive(false);
@@ -23,11 +24,10 @@ const LogIn = () => {
       setWidthActive(true);
     }
   };
+
   return (
     <BrowserRouter>
-      <BurgerMenuContext.Provider
-        value={{display, widthBurgerMenu, widthList}}
-      >
+      <BurgerMenuContext.Provider value={{display, widthBurgerMenu, widthList}}>
         <Routes>
           <Route path="/logIn" element={<LogInStructure />} />
           <Route path="/signUp/*" element={<SignUp />} />

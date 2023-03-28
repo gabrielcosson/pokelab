@@ -14,13 +14,10 @@ export const LogInContainer = (props) => {
   const [submitting, setSubmitting] = useState(false);
   const [errorStatus, setErrorStatus] = useState("");
 
-
   const gettingInfoForm = (data, emailBool, passwordBool) => {
     if (emailBool) setUser({ ...user, email: data });
     if (passwordBool) setUser({ ...user, password: data });
   };
-
-
 
   const { postFetch, data, isLoading, hasError } = useFetchPost();
   const navigate = useNavigate();
@@ -31,19 +28,14 @@ export const LogInContainer = (props) => {
     await postFetch("http://localhost:8080/pokedex/auth/logIn", user, "");
 
     setSubmitting(false);
-    if (isLoading) {
-      console.log("esta cargando");
-    }
+
     if (hasError !== null && data === null) {
       console.warn("Este es el error ", hasError);
       setErrorStatus(hasError.response.data.message)
       return;
     }
-    navigate(`/home/en`, {state:{data}});
-
+      navigate(`/home/en`);
   };
-
-  console.log(submitting);
 
   return (
     <div className={LogInContainerStyle.container}>
