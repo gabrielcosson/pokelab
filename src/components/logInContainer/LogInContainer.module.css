@@ -31,6 +31,15 @@
     margin: 0;
 }
 
+.errorMessage{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    font-size: 13px;
+    font-weight: 900;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
 .button{
     font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
     width: 80%;
@@ -42,7 +51,6 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 25px;
 
 }
 

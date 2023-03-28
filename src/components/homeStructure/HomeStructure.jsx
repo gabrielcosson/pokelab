@@ -11,6 +11,7 @@ import InHeader from "../../components/inHeader/InHeader";
 
 
 const HomeStructure = (props) => {
+    console.log(props.userInfo)
     const {language} = useParams();
     
     const { getFetch } = useFetchGet();
@@ -26,10 +27,10 @@ const HomeStructure = (props) => {
     return(
         <>
         <BurgerMenuProvider widthBurgerMenu={20} widthList={100}>
-            <InHeader></InHeader>
+            <InHeader username = {props.userInfo.username}></InHeader>
             <div className={HomeStructureStyle.complete}>
                 <div className={HomeStructureStyle.burgerMenu} style={widthBurgerMenu}>
-                    <BurgerMenu></BurgerMenu>
+                    <BurgerMenu userName = {props.userInfo.name} userRole = {props.userInfo.role}></BurgerMenu>
                 </div>
                 <div className={HomeStructureStyle.pokemonList} style={widthList}>
                     <SearchLanguage></SearchLanguage>
