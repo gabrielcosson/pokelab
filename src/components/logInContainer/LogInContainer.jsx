@@ -3,7 +3,7 @@ import LogInFields from "../logInFields/LogInFields";
 import { Link, useNavigate } from "react-router-dom";
 import buttonIcon from "../../assets/log.png";
 import useFetchPost from "../../hooks/useFetchPost";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 export const LogInContainer = (props) => {
   const [user, setUser] = useState({
@@ -21,6 +21,7 @@ export const LogInContainer = (props) => {
   };
 
 
+
   const { postFetch, data, isLoading, hasError } = useFetchPost();
   const navigate = useNavigate();
 
@@ -33,14 +34,16 @@ export const LogInContainer = (props) => {
     if (isLoading) {
       console.log("esta cargando");
     }
-    if (hasError !== null || data === null) {
+    if (hasError !== null && data === null) {
       console.warn("Este es el error ", hasError);
       setErrorStatus(hasError.response.data.message)
       return;
     }
-
     navigate(`/home/en`, {state:{data}});
+
   };
+
+  console.log(submitting);
 
   return (
     <div className={LogInContainerStyle.container}>

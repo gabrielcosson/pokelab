@@ -17,7 +17,6 @@ const Details = ()=>{
     `http://localhost:8080/pokedex/${language}/pokemon/evolution-chain?name=${pokemon}`
   );
 
-  console.log(dataEvolution)
 
   return (
     <>
