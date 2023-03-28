@@ -7,7 +7,7 @@ const TypeContainer = (props) => {
         <>
             <img className={TypeContainerStyle.typeImage} src={Types[props.type].image}></img>
             <h1 className={TypeContainerStyle.type} style={{color: Types[props.type].color}}>
-                {props.type.charAt(0).toUpperCase() + props.type.substr(1).toLowerCase()}
+                {props.typeInLanguage}
             </h1>
         </>
     );

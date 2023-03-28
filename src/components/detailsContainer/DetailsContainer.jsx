@@ -6,14 +6,17 @@ import Evolution from '../evolution/Evolution';
 import TypeContainer from '../typeContainer/TypeContainer';
 
 const DetailsContainer = (props) => {
+    console.log(props.data)
+    //<TypeContainer key = {type.replace(/\s/g, "")} type = {type.replace(/\s/g, "")} typeInLanguage = {props.data.}></TypeContainer>
+
     return(
         <div className={DetailsContainerStyle.container}>
             <div className={DetailsContainerStyle.nameTypeContainer}>
                 <div className={DetailsContainerStyle.nameContainer}>
                     <h1 className={DetailsContainerStyle.name}>{props.data.name.charAt(0).toUpperCase() + props.data.name.substr(1).toLowerCase()}</h1>
                 </div>
-                <div className={DetailsContainerStyle.typeContainer}>
-                    {(props.data.type).map(type => <TypeContainer key = {type.replace(/\s/g, "")} type = {type.replace(/\s/g, "")}></TypeContainer>)}
+                <div className={DetailsContainerStyle.typeContainer}> 
+                    {(props.data.type).map((type, index) => <TypeContainer key = {type.replace(/\s/g, "")} type = {props.data.type[index].replace(/\s/g, "")} typeInLanguage = {props.data.typesInLanguage[index]}></TypeContainer>)}
                 </div>
             </div>
 

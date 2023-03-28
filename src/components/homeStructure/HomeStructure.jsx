@@ -12,8 +12,6 @@ const HomeStructure = (props) => {
     const [url, setUrl] = useState({quantity: 0, resultes: []});
     
     const { data, isLoadin, hasError } = useFetchGet("http://localhost:8080/pokedex/pokemon?quantity=12&offset=0");
-    let burgerWidth = 50;
-    let listWidth = 100; 
 
     return(
         <>

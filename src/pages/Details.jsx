@@ -4,13 +4,12 @@ import useFetchGet from "../hooks/useFetchGet";
 import PropTypes from 'prop-types';
 import Spinner from '../components/spinner/Spinner';
 import InHeader from '../components/inHeader/InHeader';
-import { useEffect, useState } from "react";
 
 
 const Details = ()=>{
 
   const language = window.location.pathname.substring(9,11);
-  const pokemonName = window.location.pathname.substring(11);
+  const pokemonName = window.location.pathname.substring(12);
 
   const { data, isLoadin, hasError } = useFetchGet(
     `http://localhost:8080/pokedex/${language}/pokemon?value=${pokemonName}`
@@ -19,6 +18,9 @@ const Details = ()=>{
   const {data: dataEvolution, isLoadin: isLoadinEvolution, hasError: hasErrorEvolution } = useFetchGet(
     `http://localhost:8080/pokedex/${language}/pokemon/evolution-chain?name=${pokemonName}`
   );
+
+  console.log(dataEvolution)
+
   return (
     <>
       <InHeader></InHeader>
