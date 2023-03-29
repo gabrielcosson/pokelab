@@ -6,7 +6,6 @@ import Evolution from "../evolution/Evolution";
 import TypeContainer from "../typeContainer/TypeContainer";
 
 const DetailsContainer = (props) => {
-  //<TypeContainer key = {type.replace(/\s/g, "")} type = {type.replace(/\s/g, "")} typeInLanguage = {props.data.}></TypeContainer>
   return (
     <div className={DetailsContainerStyle.container}>
       <div className={DetailsContainerStyle.nameTypeContainer}>
