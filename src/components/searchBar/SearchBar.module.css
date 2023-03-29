@@ -6,12 +6,11 @@
 
 .searchForm{
     width: 80%;
-    height: 15px;
+    height: 80%;
     background: rgba(161, 161, 161, 0.4);
     display: flex;
     align-items: center;
     border-radius:  60px;
-    padding: 10px 20px;
     margin-left: 4%;
 }
 
@@ -26,19 +25,33 @@
     color: #585858;
 }
 
-.searchForm button{
+.button{
+    background-color: rgb(202, 202, 202);
     border: 0;
-    border-radius: 50%;
-    height: 25px;
-    background-color: rgba(161, 161, 161, 0.3);
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
 }
 
-.searchForm button img{
+.button:hover{
+    cursor: pointer;
+}
+.button:hover .buttonText{
+    font-weight: 700;
+}
+
+.buttonIcon{
     border: 0;
     height: 65%;
-    padding: 5px;
+    margin-right: 5%;
 }
 
-.searchForm button:hover{
-    cursor: pointer;
+.buttonText{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #797979;
 }
