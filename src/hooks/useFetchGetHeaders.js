@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { BurgerMenuContext } from "../components/context/burgerMenuContext";
 
-const useFetchGet = (baseURL) => {
+const useFetchGetHeaders = (baseURL) => {
+
+  const { globalUser } = useContext(BurgerMenuContext);
+
   const [state, setState] = useState({
     data: null,
     isLoadin: true,
@@ -13,7 +17,9 @@ const useFetchGet = (baseURL) => {
   const getFetch = async () => {
     setState({ ...state, isLoadin: true });
     try {
-      const resp = await axios.get(baseURL).then((response) => {
+      const resp = await axios.get(baseURL, {headers: {
+        'connected': globalUser.username
+      }}).then((response) => {
         setState({ data: response.data, isLoadin: false, hasError: null });
       });
     } catch (error) {
@@ -25,6 +31,7 @@ const useFetchGet = (baseURL) => {
       });
     }
   };
+
   useEffect(() => {
     getFetch();
   }, [baseURL]);
@@ -32,4 +39,4 @@ const useFetchGet = (baseURL) => {
   return {getFetch, ...state};
 };
 
-export default useFetchGet;
+export default useFetchGetHeaders;

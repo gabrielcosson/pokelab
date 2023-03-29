@@ -37,13 +37,13 @@
     font-size: 13px;
     font-weight: 900;
     margin-top: 5%;
-    margin-bottom: 2%;
 }
 
 .button{
     font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
-    width: 80%;
-    padding: 8px;
+    width: 84%;
+    padding-top: 2%;
+    padding-bottom:  2%;
     background-color: rgb(141, 0, 0);
     border-radius: 5px;
     border: 0px;
@@ -51,6 +51,7 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+    margin-top: 5%;
 
 }
 
