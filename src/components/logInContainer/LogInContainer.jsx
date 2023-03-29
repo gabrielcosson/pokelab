@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import buttonIcon from "../../assets/log.png";
 import useFetchPost from "../../hooks/useFetchPost";
 import { useContext, useEffect, useState } from "react";
+import { BurgerMenuContext } from "../context/burgerMenuContext";
 
 export const LogInContainer = (props) => {
   const [user, setUser] = useState({
@@ -21,15 +22,24 @@ export const LogInContainer = (props) => {
 
   const { postFetch, data, isLoading, hasError } = useFetchPost();
   const navigate = useNavigate();
-  useEffect(() => {
+  const { globalUser, setGlobalUser } = useContext(BurgerMenuContext);
 
+  useEffect(() => {
     if (hasError !== null) {
       setErrorStatus(data.message);
       console.warn("Este es el error ", data.message);
       return;
     }
-    if (data?.id){
-       setSubmitting(true);
+    if (data?.id) {
+      const nameObj = {
+        name : data.name,
+        username : data.username,
+        email : data.email,
+        password : data.password
+      }
+      setGlobalUser(nameObj);
+
+      setSubmitting(true);
     }
   }, [data]);
 
@@ -38,7 +48,6 @@ export const LogInContainer = (props) => {
   };
 
   if (submitting) {
-    console.log("dataaa", data);
     navigate(`/home/en`);
   }
 

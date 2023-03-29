@@ -6,3 +6,58 @@
     height: 93vh;
     border: 0px solid black;
 }
+
+.title{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    color: rgb(141, 0, 0);
+    font-size: 45px;
+    padding: 0;
+    text-align: center;
+}
+
+.listHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.titleContainer{
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.paginationContainer{
+    height: 50%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.button{
+    width: 15%;
+    padding: 1%;
+    border-radius: 5px;
+    margin: 1%;
+    background-color: rgb(141, 0, 0);
+    color: white;
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    border: 0 solid;
+}
+
+.button:hover{
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.button:disabled{
+    color: rgb(107, 106, 106);
+    background-color: rgb(187, 187, 187);
+    cursor: auto;
+    font-weight: 500;
+}
