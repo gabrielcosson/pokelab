@@ -3,7 +3,7 @@ import SignUpFields from "../signUpFields/SignUpFields";
 import { Link } from "react-router-dom";
 import buttonIcon from "../../assets/signup.png";
 import OutHeader from "../outHeader/OutHeader";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useFetchPost from "../../hooks/useFetchPost";
 const SignUpContainer = (props) => {
   const [user, setUser] = useState({
@@ -13,6 +13,8 @@ const SignUpContainer = (props) => {
     password: '',
     confirmPassword: '',
   });
+   const [errorStatus, setErrorStatus] = useState("");
+   const [successFulStatus, setSuccessFulStatus] = useState("");
 
   const gettingInfoForm = (data, type) => {
     if (type === 'email') setUser({ ...user, email: data });
@@ -23,7 +25,23 @@ const SignUpContainer = (props) => {
     
   };
    const { postFetch, data, isLoading, hasError } = useFetchPost();
-
+    useEffect(() => {
+      if(successFulStatus!==''){
+        setSuccessFulStatus('')
+      }
+    if (hasError !== null) {
+      setErrorStatus(data.message);
+      console.warn("Este es el error ", hasError);
+      return;
+    }
+    if (data?.id){
+      if(errorStatus!==''){
+        setErrorStatus('')
+      }
+      setSuccessFulStatus('Usuario creado correctamente');
+    }
+    }, [data])
+    
     const validateInfo = async () => {
       if(user.password === user.confirmPassword){
         const validatedUser = {
@@ -35,16 +53,8 @@ const SignUpContainer = (props) => {
           validatedUser,
           ""
         );
-        if (isLoading) {
-          console.log("esta cargando");
-        }
-        if (hasError !== null || data === null) {
-          console.warn("Este es el error ", hasError);
-          return;
-        }
-        alert("Usuario creado correctamente ", { data });
       }else{
-        alert('passwords missmatch');
+        setErrorStatus("Password missmatch");
       }
       
     };
@@ -54,10 +64,27 @@ const SignUpContainer = (props) => {
       <div className={SignUpContainerStyle.page}></div>
       <div className={SignUpContainerStyle.container}>
         <h1 className={SignUpContainerStyle.title}>Sign Up</h1>
-        <h5 className={SignUpContainerStyle.info}>Already have an account yet? <Link to="/logIn">Log In</Link></h5>
+        <h5 className={SignUpContainerStyle.info}>
+          Already have an account yet? <Link to="/logIn">Log In</Link>
+        </h5>
         <SignUpFields newUser={gettingInfoForm}></SignUpFields>
-        <div onClick={() => validateInfo()} className={SignUpContainerStyle.button}>
-          <img alt="signUp.png" className={SignUpContainerStyle.buttonIcon} src={buttonIcon}/>
+        {errorStatus !== "" && (
+          <h1 className={SignUpContainerStyle.errorMessage}>{errorStatus}</h1>
+        )}
+        {successFulStatus !== "" && (
+          <h1 className={SignUpContainerStyle.succesfulMessage}>
+            {successFulStatus}
+          </h1>
+        )}
+        <div
+          onClick={() => validateInfo()}
+          className={SignUpContainerStyle.button}
+        >
+          <img
+            alt="signUp.png"
+            className={SignUpContainerStyle.buttonIcon}
+            src={buttonIcon}
+          />
           <h1 className={SignUpContainerStyle.buttonText}>CREATE ACCOUNT</h1>
         </div>
       </div>

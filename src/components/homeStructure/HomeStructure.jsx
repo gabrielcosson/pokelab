@@ -6,7 +6,6 @@ import useFetchGet from "../../hooks/useFetchGet";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 import SearchLanguage from "../searchLanguage/SearchLanguage";
 import { useParams } from "react-router-dom";
-import BurgerMenuProvider from "../context/BurgerMenuProvider";
 import InHeader from "../../components/inHeader/InHeader";
 import { BurgerMenuContext } from "../context/burgerMenuContext";
 
