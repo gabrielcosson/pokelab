@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 const useFetchGet = (baseURL) => {
   const [state, setState] = useState({
     data: null,
     isLoadin: true,
     hasError: null,
   });
+
   const getFetch = async () => {
     setState({ ...state, isLoadin: true });
     try {
@@ -16,14 +18,12 @@ const useFetchGet = (baseURL) => {
       console.log(error);
     }
   };
+  
   useEffect(() => {
     getFetch();
   }, [baseURL]);
 
-  return {
-    data: state.data,
-    isLoadin: state.isLoadin,
-    hasError: state.hasError,
-  };
+  return {getFetch, ...state};
 };
+
 export default useFetchGet;

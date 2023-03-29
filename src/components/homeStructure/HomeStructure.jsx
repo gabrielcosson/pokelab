@@ -11,18 +11,14 @@ import { BurgerMenuContext } from "../context/burgerMenuContext";
 
 const HomeStructure = (props) => {
   const { language } = useParams();
-
-  console.log(props)
-
-  const [pokemons, setPokemons] = useState("");
-  const [url, setUrl] = useState({ quantity: 0, resultes: [] });
+  //const [pokemons, setPokemons] = useState("");
+  // [url, setUrl] = useState({ quantity: 0, resultes: [] });
   const [pageOffset, setPageOffset] = useState(0);
+  const { widthBurgerMenu, widthList } = useContext(BurgerMenuContext);
 
   const { data, isLoadin, hasError } = useFetchGet(
     `http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
   
-  const { widthBurgerMenu, widthList } = useContext(BurgerMenuContext);
-
   return (
     <>
       <InHeader username = "gabrielnieves"></InHeader>
@@ -31,7 +27,7 @@ const HomeStructure = (props) => {
           <BurgerMenu userName = "Gabriel" userRole = "TRAINER"></BurgerMenu>
         </div>
         <div className={HomeStructureStyle.pokemonList} style={widthList}>
-          <SearchLanguage></SearchLanguage>
+          <SearchLanguage language= {language}></SearchLanguage>
           <div className={HomeStructureStyle.listHeader}>
                 <div className={HomeStructureStyle.titleContainer}>
                     <h1 className={HomeStructureStyle.title}>Pokedex</h1>
