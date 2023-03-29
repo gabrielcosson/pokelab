@@ -12,6 +12,7 @@ const PokemonList = (props) => {
                     key = {pokemon.id}
                     name = {pokemon.name} 
                     image = {pokemon.img_path}
+                    nickname = {pokemon.nickname}
                     mainType = {pokemon.types[0]}
                     types = {pokemon.types}
                     typesInLanguage = {pokemon.typesInLanguage}
