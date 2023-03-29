@@ -6,7 +6,7 @@ import Evolution from "../evolution/Evolution";
 import TypeContainer from "../typeContainer/TypeContainer";
 
 const DetailsContainer = (props) => {
-  return (
+    return (
     <div className={DetailsContainerStyle.container}>
       <div className={DetailsContainerStyle.nameTypeContainer}>
         <div className={DetailsContainerStyle.nameContainer}>
@@ -14,6 +14,7 @@ const DetailsContainer = (props) => {
             {props.data.name.charAt(0).toUpperCase() +
               props.data.name.substr(1).toLowerCase()}
           </h1>
+          <h1 className={DetailsContainerStyle.id}>No. {props.data.id}</h1>
         </div>
         <div className={DetailsContainerStyle.typeContainer}>
           {props.data.type.map((type, index) => (
