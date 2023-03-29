@@ -1,5 +1,5 @@
 import { Component, useState } from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import { BurgerMenuContext } from "../components/context/burgerMenuContext";
 import BurgerMenuProvider from "../components/context/BurgerMenuProvider";
 import LogInStructure from "../components/logInStructure/LogInStructure";
@@ -27,12 +27,15 @@ const LogIn = () => {
 
   return (
     <BrowserRouter>
-      <BurgerMenuContext.Provider value={{display, widthBurgerMenu, widthList}}>
+      <BurgerMenuContext.Provider
+        value={{ display, widthBurgerMenu, widthList }}
+      >
         <Routes>
           <Route path="/logIn" element={<LogInStructure />} />
           <Route path="/signUp/*" element={<SignUp />} />
           <Route path="/home/:language" element={<Home />} />
           <Route path="/details/:language/:pokemon" element={<Details />} />
+          <Route path="/" element={<Navigate to="/logIn" />} />
         </Routes>
       </BurgerMenuContext.Provider>
     </BrowserRouter>

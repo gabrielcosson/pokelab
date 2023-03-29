@@ -8,6 +8,10 @@ const useFetchPost = () => {
     hasError: null,
   });
 
+  useEffect(() => {
+    console.log(state, "Holaa");
+  }, [state]);
+
   const postFetch = async (baseURL, body, header) => {
     setState({ ...state, isLoading: true });
 
@@ -15,10 +19,10 @@ const useFetchPost = () => {
       const response = await axios.post(baseURL, body, header);
       setState({ data: response.data, isLoading: false, hasError: null });
     } catch (error) {
-      setState({ data: null, isLoading: false, hasError: error });
+      console.log(error, 'Error catch');
+      setState({ data: error.response.data, isLoading: false, hasError: error });
     }
   };
-
   return { postFetch, ...state };
 };
 

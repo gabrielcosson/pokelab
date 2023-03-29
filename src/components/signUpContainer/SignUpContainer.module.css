@@ -64,3 +64,21 @@
     width: 20px;
     margin-right: 20px;
 }
+
+.errorMessage{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    font-size: 13px;
+    font-weight: 900;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.succesfulMessage{
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    color: blue;
+    font-size: 13px;
+    font-weight: 900;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
