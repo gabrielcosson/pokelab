@@ -7,10 +7,47 @@ import userImage from '../../assets/user.png';
 import arrow from '../../assets/arrow.png';
 import pokeball from '../../assets/pokeball.png';
 import log from '../../assets/log.png'
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { BurgerMenuContext } from '../context/burgerMenuContext';
+import useFetchPut from '../../hooks/useFetchPut';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const BurgerMenu = (props) => {
+    const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
+    const { putFetch, data, isLoading, hasError } = useFetchPut();
+    const [loggedOut, setLoggedOut] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (hasError !== null) {
+            return;
+        }
+        if (data?.status) {
+            setLoggedOut(true);
+        }
+    }, [data]);
+
+    const logOut = async () => {
+        const logOutUser = {
+            "email": globalUser.email,
+            "password": globalUser.password
+        }
+        await putFetch("http://localhost:8080/pokedex/auth/logOut", logOutUser, "");
+    };
+
+    if(loggedOut){
+        navigate("/logIn")
+    }
+
+    const myPokemons = ()=>{
+        navigate(`/captures/${props.language}`)
+    }
+
+    const home = ()=>{
+        navigate(`/home/${props.language}`)
+    }
+
     return(
         <div className={BurgerMenuStyle.container}>
 
@@ -42,7 +79,7 @@ const BurgerMenu = (props) => {
                 <div className={BurgerMenuStyle.imageContainer}>
                     <img className={BurgerMenuStyle.image} src={pokeballImage}></img>
                 </div>
-                <div className={BurgerMenuStyle.textContainer}>
+                <div className={BurgerMenuStyle.textContainer} onClick={myPokemons}>
                     <h1>My Pokemons</h1>
                 </div>
             </div>
@@ -51,7 +88,7 @@ const BurgerMenu = (props) => {
                 <div className={BurgerMenuStyle.imageContainer}>
                     <img className={BurgerMenuStyle.image} src={pokedexImage}></img>
                 </div>
-                <div className={BurgerMenuStyle.textContainer}>
+                <div className={BurgerMenuStyle.textContainer} onClick={home}>
                     <h1>Pokedex</h1>
                 </div>
             </div>
@@ -65,10 +102,10 @@ const BurgerMenu = (props) => {
                 </div>
             </div>
 
-            <div className={BurgerMenuStyle.outContainer}>
+            <button className={BurgerMenuStyle.outContainer} onClick={logOut}>
                 <img src={log}></img>
-                <Link to = "/logIn"><h1>Log Out</h1></Link>
-            </div>
+                <h1 className={BurgerMenuStyle.logOut}>Log Out</h1>
+            </button>
         </div>
     );
 };

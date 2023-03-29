@@ -4,10 +4,12 @@ import LogInFieldsStyle from "./LogInFields.module.css";
 const LogInFields = ({ newUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
   const onInputEmailChange = ({ target }) => {
     setEmail(target.value);
     newUser(target.value,true,false)
   };
+  
   const onInputPasswordChange = ({ target }) => {
     setPassword(target.value);
     newUser(target.value, false, true);

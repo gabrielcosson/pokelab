@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useFetchPost = () => {
+const useFetchPut = () => {
+  
   const [state, setState] = useState({
     data: null,
     isLoading: true,
@@ -10,18 +11,18 @@ const useFetchPost = () => {
 
   useEffect(() => {}, [state]);
 
-  const postFetch = async (baseURL, body, header) => {
+  const putFetch = async (baseURL, body, header) => {
     setState({ ...state, isLoading: true });
 
     try {
-      const response = await axios.post(baseURL, body, header);
+      const response = await axios.put(baseURL, body, header);
       setState({ data: response.data, isLoading: false, hasError: null });
     } catch (error) {
       console.log(error, 'Error catch');
       setState({ data: error.response.data, isLoading: false, hasError: error });
     }
   };
-  return { postFetch, ...state };
+  return { putFetch, ...state };
 };
 
-export default useFetchPost;
+export default useFetchPut;

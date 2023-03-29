@@ -1,9 +1,7 @@
-import { CaptureStructure } from '../components/caputeStructure/CaptureStructure'
+import CaptureStructure from "../components/captureStructure/CaptureStructure"
 
 export const Captures = () => {
   return (
-    <>
-        <CaptureStructure/>
-    </>
+    <CaptureStructure></CaptureStructure>
   )
 }

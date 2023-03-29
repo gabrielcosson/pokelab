@@ -35,10 +35,11 @@ export const LogInContainer = (props) => {
         name : data.name,
         username : data.username,
         email : data.email,
-        password : data.password
+        password : data.password,
+        role: data.role
       }
-      setGlobalUser(nameObj);
 
+      setGlobalUser(nameObj);
       setSubmitting(true);
     }
   }, [data]);
