@@ -1,7 +1,4 @@
 import HomeStructure from "../components/homeStructure/HomeStructure";
-import { useLocation } from "react-router-dom";
-
-
 
 const Home = () => {
   return (

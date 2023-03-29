@@ -26,8 +26,17 @@
 .name{
     color: rgb(141, 0, 0);
     font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 60px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.id{
+    color: rgb(141, 0, 0);
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 20px;
     margin-left: 30px;
     text-align: center;
 }

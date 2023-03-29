@@ -55,3 +55,7 @@
 .back:hover{
     cursor: pointer;
 }
+
+.backButton{
+    border: 0 solid;
+}
