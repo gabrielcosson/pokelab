@@ -7,6 +7,8 @@ const useFetchGet = (baseURL) => {
     isLoadin: true,
     hasError: null,
   });
+  useEffect(() => {
+  }, [state]);
 
   const getFetch = async () => {
     setState({ ...state, isLoadin: true });
@@ -15,10 +17,14 @@ const useFetchGet = (baseURL) => {
         setState({ data: response.data, isLoadin: false, hasError: null });
       });
     } catch (error) {
-      console.log(error);
+      console.log(error, 'Error catch en useFetchGet');
+      setState({
+        data: null,
+        isLoading: false,
+        hasError: error,
+      });
     }
   };
-  
   useEffect(() => {
     getFetch();
   }, [baseURL]);

@@ -13,7 +13,7 @@ const HomeStructure = (props) => {
   const { language } = useParams();
   const [pageOffset, setPageOffset] = useState(0);
   const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
-
+  
   const { data, isLoadin, hasError } = useFetchGet(
     `http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
 
