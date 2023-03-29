@@ -9,17 +9,17 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const DetailsStructure = (props) => {
-    const { widthBurgerMenu, widthList } = useContext(BurgerMenuContext);
+    const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
 
     return(
         <>
             <div className={DetailsStructureStyle.allContainer}>
                 <div className={DetailsStructureStyle.burgerMenu} style={widthBurgerMenu}>
-                    <BurgerMenu></BurgerMenu>
+                    <BurgerMenu language = {props.data.language} userName={globalUser.name} userRole={globalUser.role}></BurgerMenu>
                 </div>
                 <div className={DetailsStructureStyle.details} style={widthList}>
                     <div className={DetailsStructureStyle.detailsHeader}>
-                    <Link to={`/home/${props.data.language}`} state={{ offset: 50 }}><img className={DetailsStructureStyle.back} src={backButton}></img></Link>
+                    <Link to={`/home/${props.data.language}`}><img className={DetailsStructureStyle.back} src={backButton}></img></Link>
                         <div className={DetailsStructureStyle.titleContainer}>
                             <h1 className={DetailsStructureStyle.title}>Pokedex</h1>
                         </div>

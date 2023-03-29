@@ -1,44 +1,34 @@
 import CaptureStructureStyle from "./CaptureStructure.module.css";
 import { Component, useContext, useEffect, useState } from "react";
-import Spinner from "../../components/spinner/Spinner";
-import PokemonList from "../../components/pokemonList/PokemonList";
+import Spinner from "../spinner/Spinner";
+import PokemonList from "../pokemonList/PokemonList";
 import useFetchGet from "../../hooks/useFetchGet";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 import SearchLanguage from "../searchLanguage/SearchLanguage";
 import { useParams } from "react-router-dom";
-import InHeader from "../../components/inHeader/InHeader";
+import InHeader from "../inHeader/InHeader";
 import { BurgerMenuContext } from "../context/burgerMenuContext";
 
-export const CaptureStructure = (props) => {
+const CaptureStructure = (props) => {
   const { language } = useParams();
-
-  console.log(props);
-
-  const [pokemons, setPokemons] = useState("");
-  const [url, setUrl] = useState({ quantity: 0, resultes: [] });
   const [pageOffset, setPageOffset] = useState(0);
+  const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
 
   const { data, isLoadin, hasError } = useFetchGet(
-    `http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`
-  );
-
-  const { widthBurgerMenu, widthList } = useContext(BurgerMenuContext);
+    `http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
 
   return (
     <>
-      <InHeader username="gabrielnieves"></InHeader>
+      <InHeader username={globalUser.username}></InHeader>
       <div className={CaptureStructureStyle.complete}>
-        <div
-          className={CaptureStructureStyle.burgerMenu}
-          style={widthBurgerMenu}
-        >
-          <BurgerMenu userName="Gabriel" userRole="TRAINER"></BurgerMenu>
+        <div className={CaptureStructureStyle.burgerMenu} style={widthBurgerMenu}>
+          <BurgerMenu language = {language} userName={globalUser.name} userRole={globalUser.role}></BurgerMenu>
         </div>
         <div className={CaptureStructureStyle.pokemonList} style={widthList}>
-          <SearchLanguage></SearchLanguage>
+          <SearchLanguage language= {language}></SearchLanguage>
           <div className={CaptureStructureStyle.listHeader}>
             <div className={CaptureStructureStyle.titleContainer}>
-              <h1 className={CaptureStructureStyle.title}>Captures</h1>
+              <h1 className={CaptureStructureStyle.title}>My Pokemons</h1>
             </div>
             <div className={CaptureStructureStyle.paginationContainer}>
               <button
@@ -64,3 +54,5 @@ export const CaptureStructure = (props) => {
     </>
   );
 };
+
+export default CaptureStructure;

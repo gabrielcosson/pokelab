@@ -1,7 +1,6 @@
 .loader {
     display: flex;
     position: absolute;
-    width: 100%;
     height: 70vh;
     align-items: center;
     justify-content: center;
@@ -34,7 +33,7 @@
 
 .text{
     position: absolute;
-    margin-top: 10%;
+    margin-top: 15%;
     color: brown;
     display: block;
     font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;

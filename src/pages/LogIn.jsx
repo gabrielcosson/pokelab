@@ -18,7 +18,9 @@ const LogIn = () => {
       username: '',
       name: '',
       password: '',
+      role: ''
     });
+
     const display = () => {
     
       if (widthActive) {
