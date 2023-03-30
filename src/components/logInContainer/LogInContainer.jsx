@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import buttonIcon from "../../assets/log.png";
 import useFetchPost from "../../hooks/useFetchPost";
 import { useContext, useEffect, useState } from "react";
-import { BurgerMenuContext } from "../context/burgerMenuContext";
+import { AppContext } from "../appContext/AppContext";
 
 export const LogInContainer = (props) => {
   const [user, setUser] = useState({
@@ -22,7 +22,7 @@ export const LogInContainer = (props) => {
 
   const { postFetch, data, isLoading, hasError } = useFetchPost();
   const navigate = useNavigate();
-  const { globalUser, setGlobalUser } = useContext(BurgerMenuContext);
+  const { globalUser, setGlobalUser } = useContext(AppContext);
 
   useEffect(() => {
     if (hasError !== null) {

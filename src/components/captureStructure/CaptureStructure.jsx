@@ -6,13 +6,13 @@ import BurgerMenu from "../burgerMenu/BurgerMenu";
 import SearchLanguage from "../searchLanguage/SearchLanguage";
 import { useParams } from "react-router-dom";
 import InHeader from "../inHeader/InHeader";
-import { BurgerMenuContext } from "../context/burgerMenuContext";
+import { AppContext } from "../appContext/AppContext";
 import useFetchGetHeaders from "../../hooks/useFetchGetHeaders";
 
 const CaptureStructure = (props) => {
   const { language } = useParams();
   const [pageOffset, setPageOffset] = useState(0);
-  const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
+  const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
 
   const { data, isLoadin, hasError } = useFetchGetHeaders(
     `http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
