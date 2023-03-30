@@ -7,12 +7,12 @@ import BurgerMenu from "../burgerMenu/BurgerMenu";
 import SearchLanguage from "../searchLanguage/SearchLanguage";
 import { useParams } from "react-router-dom";
 import InHeader from "../../components/inHeader/InHeader";
-import { BurgerMenuContext } from "../context/burgerMenuContext";
+import { AppContext } from "../appContext/AppContext";
 
 const HomeStructure = (props) => {
   const { language } = useParams();
   const [pageOffset, setPageOffset] = useState(0);
-  const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
+  const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
   
   const { data, isLoadin, hasError } = useFetchGet(
     `http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);

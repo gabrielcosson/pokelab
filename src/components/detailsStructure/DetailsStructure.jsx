@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
-import { BurgerMenuContext } from '../context/burgerMenuContext';
+import { AppContext } from '../appContext/AppContext';
 import DetailsContainer from '../detailsContainer/DetailsContainer';
 import LanguageOptions from '../languageOptions/LanguageOptions';
 import DetailsStructureStyle from './DetailsStructure.module.css';
@@ -13,7 +13,7 @@ import InHeader from '../inHeader/InHeader';
 
 
 const DetailsStructure = (props) => {
-    const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
+    const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
     const {language, pokemon} = useParams();
 
 

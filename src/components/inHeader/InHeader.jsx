@@ -2,10 +2,10 @@ import InHeaderStyle from "./InHeader.module.css";
 import hamburgerIcon from "../../assets/hamburger-menu.png";
 import logo from "../../assets/logo.png";
 import { useContext } from "react";
-import { BurgerMenuContext } from "../context/burgerMenuContext";
+import { AppContext } from "../appContext/AppContext";
 
 const InHeader = (props) => {
-  const { display } = useContext(BurgerMenuContext);
+  const { display } = useContext(AppContext);
 
   return (
     <div className={InHeaderStyle.header}>

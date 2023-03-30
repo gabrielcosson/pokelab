@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { BurgerMenuContext } from "../components/context/burgerMenuContext";
+import { AppContext } from "../components/appContext/AppContext";
 
 const useFetchGetHeaders = (baseURL) => {
 
-  const { globalUser } = useContext(BurgerMenuContext);
+  const { globalUser } = useContext(AppContext);
 
   const [state, setState] = useState({
     data: null,

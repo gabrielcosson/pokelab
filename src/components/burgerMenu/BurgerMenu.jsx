@@ -8,13 +8,13 @@ import arrow from '../../assets/arrow.png';
 import pokeball from '../../assets/pokeball.png';
 import log from '../../assets/log.png'
 import { useContext, useEffect, useState } from 'react';
-import { BurgerMenuContext } from '../context/burgerMenuContext';
+import { AppContext } from '../appContext/AppContext';
 import useFetchPut from '../../hooks/useFetchPut';
 import { Link, useNavigate } from 'react-router-dom';
 
 
 const BurgerMenu = (props) => {
-    const { widthBurgerMenu, widthList, globalUser } = useContext(BurgerMenuContext);
+    const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
     const { putFetch, data, isLoading, hasError } = useFetchPut();
     const [loggedOut, setLoggedOut] = useState(false);
     const navigate = useNavigate();

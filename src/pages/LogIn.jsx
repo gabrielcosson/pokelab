@@ -1,7 +1,7 @@
 import { Component, useState } from "react";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
-import { BurgerMenuContext } from "../components/context/burgerMenuContext";
-import BurgerMenuProvider from "../components/context/BurgerMenuProvider";
+import { AppContext } from "../components/appContext/AppContext";
+import AppProvider from "../components/appContext/AppProvider";
 import LogInStructure from "../components/logInStructure/LogInStructure";
 import { Captures } from "./Captures";
 import Details from "./Details";
@@ -36,7 +36,7 @@ const LogIn = () => {
 
   return (
     <BrowserRouter>
-      <BurgerMenuContext.Provider
+      <AppContext.Provider
         value={{
           display,
           widthBurgerMenu,
@@ -53,7 +53,7 @@ const LogIn = () => {
           <Route path="/details/:language/:pokemon" element={<Details />} />
           <Route path="/" element={<Navigate to="/logIn" />} />
         </Routes>
-      </BurgerMenuContext.Provider>
+      </AppContext.Provider>
     </BrowserRouter>
   );
 };

@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { BurgerMenuContext } from "../context/burgerMenuContext";
+import { AppContext } from "../appContext/AppContext";
 import SpinnerStyle from "./Spinner.module.css";
 
 const Spinner = () => {
-    const { widthList } = useContext(BurgerMenuContext);
+    const { widthList } = useContext(AppContext);
 
     return (
         <>

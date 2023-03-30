@@ -1,7 +1,7 @@
 import React from 'react'
-import { BurgerMenuContext } from './burgerMenuContext'
+import { AppContext } from './AppContext'
 
-const BurgerMenuProvider = ({
+const AppProvider = ({
   children,
   setWidthBurgerMenu,
   setWidthList,
@@ -10,7 +10,7 @@ const BurgerMenuProvider = ({
 }) => {
   console.log(setWidthBurgerMenu);
   return (
-    <BurgerMenuContext.Provider
+    <AppContext.Provider
       value={{
         setWidthBurgerMenu,
         setWidthList,
@@ -19,8 +19,8 @@ const BurgerMenuProvider = ({
       }}
     >
       {children}
-    </BurgerMenuContext.Provider>
+    </AppContext.Provider>
   );
 };
 
-export default BurgerMenuProvider
+export default AppProvider;
