@@ -32,13 +32,13 @@ export const LogInContainer = (props) => {
     }
     if (data?.id) {
       const nameObj = {
-        name : data.name,
-        username : data.username,
-        email : data.email,
-        password : data.password,
-        role: data.role
-      }
-
+        name: data.name,
+        username: data.username,
+        email: data.email,
+        password: data.password,
+        role: data.role,
+        connected: true
+      };
       setGlobalUser(nameObj);
       setSubmitting(true);
     }

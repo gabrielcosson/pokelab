@@ -14,7 +14,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const BurgerMenu = (props) => {
-    const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
+    const { widthBurgerMenu, widthList, globalUser, setGlobalUser } =
+      useContext(AppContext);
     const { putFetch, data, isLoading, hasError } = useFetchPut();
     const [loggedOut, setLoggedOut] = useState(false);
     const navigate = useNavigate();
@@ -37,6 +38,15 @@ const BurgerMenu = (props) => {
     };
 
     if(loggedOut){
+        const nameObj = {
+          name: "",
+          username: "",
+          email: "",
+          password: "",
+          role: "",
+          connected: false,
+        };
+        setGlobalUser(nameObj);
         navigate("/logIn")
     }
 
