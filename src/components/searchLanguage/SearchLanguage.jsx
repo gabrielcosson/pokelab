@@ -6,7 +6,7 @@ const SearchLanguage = (props) => {
     return(
         <div className={SearchLanguageStyle.container}>
             <div className={SearchLanguageStyle.searchBar}>
-                <SearchBar language= {props.language}></SearchBar>
+                <SearchBar updateSearch = {props.updateSearch} language= {props.language}></SearchBar>
             </div>
             <div className={SearchLanguageStyle.languages}>
                 <LanguageHome></LanguageHome>

@@ -11,17 +11,17 @@ const DetailsContainer = (props) => {
       <div className={DetailsContainerStyle.nameTypeContainer}>
         <div className={DetailsContainerStyle.nameContainer}>
           <h1 className={DetailsContainerStyle.name}>
-            {props.data.name.charAt(0).toUpperCase() +
-              props.data.name.substr(1).toLowerCase()}
+            {props.data.results[0].name.charAt(0).toUpperCase() +
+              props.data.results[0].name.substr(1).toLowerCase()}
           </h1>
-          <h1 className={DetailsContainerStyle.id}>No. {props.data.id}</h1>
+          <h1 className={DetailsContainerStyle.id}>No. {props.data.results[0].id}</h1>
         </div>
         <div className={DetailsContainerStyle.typeContainer}>
-          {props.data.type.map((type, index) => (
+          {props.data.results[0].types.map((type, index) => (
             <TypeContainer
               key={index}
-              type={props.data.type[index].replace(/\s/g, "")}
-              typeInLanguage={props.data.typesInLanguage[index]}
+              type={props.data.results[0].types[index].replace(/\s/g, "")}
+              typeInLanguage={props.data.results[0].typesInLanguage[index]}
             ></TypeContainer>
           ))}
         </div>
@@ -32,20 +32,20 @@ const DetailsContainer = (props) => {
           <div className={DetailsContainerStyle.imageContainer}>
             <img
               className={DetailsContainerStyle.image}
-              src={props.data.img_path}
+              src={props.data.results[0].img_path}
             ></img>
           </div>
-          <Description data={props.data}></Description>
+          <Description data={props.data.results[0]}></Description>
         </div>
 
         <div className={DetailsContainerStyle.secondColumn}>
-          <Stats data={props.data}></Stats>
+          <Stats data={props.data.results[0]}></Stats>
         </div>
 
         <div className={DetailsContainerStyle.thirdColumn}>
-          <Skills data={props.data}></Skills>
+          <Skills data={props.data.results[0]}></Skills>
           <Evolution
-            data={props.data}
+            data={props.data.results[0]}
             dataEvolution={props.dataEvolution}
           ></Evolution>
         </div>

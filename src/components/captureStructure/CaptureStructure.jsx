@@ -14,7 +14,7 @@ const CaptureStructure = (props) => {
   const { language } = useParams();
   const [pageOffset, setPageOffset] = useState(0);
   const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
-  console.log("lenguaje", language);
+
   const { data, isLoadin, hasError } = useFetchGetHeaders(
     `http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
 

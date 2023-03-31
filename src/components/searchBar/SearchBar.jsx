@@ -6,29 +6,14 @@ import useFetchGetParams from "../../hooks/useFetchGetParams";
 const SearchBar = (props) => {
   const [pokemonName, setPokemonName] = useState("");
   const [errorStatus, setErrorStatus] = useState("");
+  
   const onPokemonNameChange = ({ target }) => {
     setPokemonName(target.value);
   };
 
-  const { getFetchParam, data, isLoading, hasError } = useFetchGetParams();
-
-  const searchPokemon = async () => {
-    await getFetchParam(
-      `http://localhost:8080/pokedex/${
-        props.language
-      }/pokemon?value=${pokemonName.toLowerCase()}`
-    );
+  const searchPokemon = () => {
+    props.updateSearch(pokemonName);
   };
-  useEffect(() => {
-    if (hasError !== null) {
-      console.warn("Este es el error ", hasError);
-      setErrorStatus(hasError.response.data.message);
-      return;
-    }
-    if (data?.name) {
-      console.log("data desde barra", data);
-    }
-  }, [data]);
 
   return (
     <div className={SearchBarStyle.searchBar}>
