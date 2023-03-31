@@ -4,12 +4,19 @@ import SignUpFieldsStyle from "./SignUpFields.module.css";
 const SignUpFields = ({ newUser }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [questionAnswer, setQuestionAnswer] = useState("");
+
   const onInputNameChange = ({ target }) => {
     newUser(target.value, "name");
     setName(target.value);
+  };
+
+  const onInputEmailChange = ({ target }) => {
+    setEmail(target.value);
+    newUser(target.value, "email");
   };
 
   const onInputUsernameChange = ({ target }) => {
@@ -21,15 +28,18 @@ const SignUpFields = ({ newUser }) => {
     setPassword(target.value);
     newUser(target.value, "password");
   };
+  
   const onInputConfirmPasswordChange = ({ target }) => {
     setConfirmPassword(target.value);
     newUser(target.value, "confirmPassword");
   };
 
-  const onInputEmailChange = ({ target }) => {
-    setEmail(target.value);
-    newUser(target.value, "email");
+  const onInputQuestionAnswerChange = ({ target }) => {
+    setQuestionAnswer(target.value);
+    newUser(target.value, "questionAnswer");
   };
+
+
 
   return (
     <form>
@@ -85,6 +95,17 @@ const SignUpFields = ({ newUser }) => {
           className={SignUpFieldsStyle.field}
           value={confirmPassword}
           onChange={onInputConfirmPasswordChange}
+        ></input>
+      </div>
+
+      <h6 className={SignUpFieldsStyle.title}>What is the name of your first pet?</h6>
+      <div className={SignUpFieldsStyle.inputSpace}>
+        <input
+          type="text"
+          placeholder="Answer the question here"
+          className={SignUpFieldsStyle.field}
+          value={questionAnswer}
+          onChange={onInputQuestionAnswerChange}
         ></input>
       </div>
     </form>
