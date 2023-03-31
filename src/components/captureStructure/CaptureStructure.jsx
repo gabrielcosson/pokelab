@@ -9,14 +9,26 @@ import InHeader from "../inHeader/InHeader";
 import { AppContext } from "../appContext/AppContext";
 import useFetchGetHeaders from "../../hooks/useFetchGetHeaders";
 import SearchLanguageCapture from "../searchLanguageCaptures/SearchLanguageCapture";
+import PaginationCaptures from "../paginationCaptures/PaginationCaptures";
 
 const CaptureStructure = (props) => {
   const { language } = useParams();
   const [pageOffset, setPageOffset] = useState(0);
   const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
+  const [disabled, setDisabled] = useState(false);
 
   const { data, isLoadin, hasError } = useFetchGetHeaders(
     `http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
+
+  useEffect(() => {
+    if(data!= null){
+      if(data.results.length < 12){
+        setDisabled(true)
+      }else{
+        setDisabled(false)
+      }
+    } 
+  }, [data]);
 
   return (
     <>
@@ -38,24 +50,7 @@ const CaptureStructure = (props) => {
             <div className={CaptureStructureStyle.titleContainer}>
               <h1 className={CaptureStructureStyle.title}>My Pokemons</h1>
             </div>
-            {isLoadin === false && (
-              <div className={CaptureStructureStyle.paginationContainer}>
-                <button
-                  className={CaptureStructureStyle.button}
-                  onClick={() => setPageOffset(pageOffset - 12)}
-                  disabled={pageOffset == 0 ? true : false}
-                >
-                  Previous
-                </button>
-                <button
-                  className={CaptureStructureStyle.button}
-                  onClick={() => setPageOffset(pageOffset + 12)}
-                  disabled={data.results.length < 12 ? true : false}
-                >
-                  Next
-                </button>
-              </div>
-            )}
+            <PaginationCaptures setPageOffset= {setPageOffset} pageOffset= {pageOffset} disabled={disabled}></PaginationCaptures>
           </div>
           {isLoadin === true && <Spinner></Spinner>}
           {isLoadin === false && <PokemonList data={data}></PokemonList>}

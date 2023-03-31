@@ -5,17 +5,19 @@ import PokemonList from "../../components/pokemonList/PokemonList";
 import useFetchGet from "../../hooks/useFetchGet";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 import SearchLanguage from "../searchLanguage/SearchLanguage";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import InHeader from "../../components/inHeader/InHeader";
 import { AppContext } from "../appContext/AppContext";
+import PaginationPokedex from "../paginationPokedex/PaginationPokedex";
 
 const HomeStructure = (props) => {
   const { language } = useParams();
-  const [pageOffset, setPageOffset] = useState(0);
+  const location = useLocation();
+  const [pageOffset, setPageOffset] = useState(location.state != null ? (((Number(location.state.pageConsistent))-1)*12) : 0);
+  const [page, setPage] = useState(location.state != null ? Number(location.state.pageConsistent) : 1);
   const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
-  const [foundPokemon, setFoundPokemon] = useState("")
-  const [url, setURL] = useState(`http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`)
-  const [page, setPage] = useState(1);
+  const [foundPokemon, setFoundPokemon] = useState("");
+  const [url, setURL] = useState(`http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
   
   const onPageChange = ({ target }) => {
     setPage(target.value);
@@ -62,30 +64,10 @@ const HomeStructure = (props) => {
             <div className={HomeStructureStyle.titleContainer}>
               <h1 className={HomeStructureStyle.title}>Pokedex</h1>
             </div>
-            <div className={HomeStructureStyle.paginationContainer}>
-              <button
-                className={HomeStructureStyle.button}
-                onClick={() => changePage(page-1)}
-                disabled={pageOffset == 0 || foundPokemon !="" ? true : false}
-              >
-                Previous
-              </button>
-              <div className={HomeStructureStyle.pageFinder}>
-                <input className={HomeStructureStyle.pageFinderInput} type="number" value={page} onChange={onPageChange}></input>
-                <button className={HomeStructureStyle.pageFinderButton} onClick={()=>changePage(page)} disabled={foundPokemon !="" ? true : false}>Go</button>
-              </div>
-              
-              <button
-                className={HomeStructureStyle.button}
-                onClick={() => changePage(page+1)}
-                disabled={pageOffset == 636 || foundPokemon !="" ? true : false}
-              >
-                Next
-              </button>
-            </div>
+            <PaginationPokedex changePage={changePage} onPageChange={onPageChange} pageOffset={pageOffset} foundPokemon={foundPokemon} page={page}></PaginationPokedex>
           </div>
           {isLoadin === true && <Spinner></Spinner>}
-          {isLoadin === false && <PokemonList data={data} ></PokemonList>}
+          {isLoadin === false && <PokemonList page={page} data={data} ></PokemonList>}
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ import DetailsContainer from '../detailsContainer/DetailsContainer';
 import LanguageOptions from '../languageOptions/LanguageOptions';
 import DetailsStructureStyle from './DetailsStructure.module.css';
 import backButton from '../../assets/backButton.png'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import useFetchGet from '../../hooks/useFetchGet';
 import Spinner from '../spinner/Spinner';
@@ -15,7 +15,8 @@ import InHeader from '../inHeader/InHeader';
 const DetailsStructure = (props) => {
     const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
     const {language, pokemon} = useParams();
-
+    const location = useLocation()
+    const { from, page } = location.state
 
     const { data, isLoadin, hasError } = useFetchGet(
         `http://localhost:8080/pokedex/${language}/pokemon?value=${pokemon}`
@@ -34,7 +35,7 @@ const DetailsStructure = (props) => {
                 </div>
                 <div className={DetailsStructureStyle.details} style={widthList}>
                     <div className={DetailsStructureStyle.detailsHeader}>
-                    <Link to={`/home/${language}`}><img className={DetailsStructureStyle.back} src={backButton}></img></Link>
+                        <Link to={from} state={{ pageConsistent: page }}><img className={DetailsStructureStyle.back} src={backButton}></img></Link>
                         <div className={DetailsStructureStyle.titleContainer}>
                             <h1 className={DetailsStructureStyle.title}>Pokedex</h1>
                         </div>
