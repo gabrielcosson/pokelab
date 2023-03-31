@@ -8,15 +8,13 @@ import SearchLanguage from "../searchLanguage/SearchLanguage";
 import { useParams } from "react-router-dom";
 import InHeader from "../../components/inHeader/InHeader";
 import { AppContext } from "../appContext/AppContext";
-import { text } from "@fortawesome/fontawesome-svg-core";
-import { number } from "prop-types";
 
 const HomeStructure = (props) => {
   const { language } = useParams();
   const [pageOffset, setPageOffset] = useState(0);
   const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
   const [foundPokemon, setFoundPokemon] = useState("")
-  const [url, setURL] = useState(`http://localhost:8080/pokedex/${language}/pokemon?value=${foundPokemon.toLowerCase()}`)
+  const [url, setURL] = useState(`http://localhost:8080/pokedex/pokemon?quantity=12&offset=${pageOffset}&language=${language}`)
   const [page, setPage] = useState(1);
   
   const onPageChange = ({ target }) => {
