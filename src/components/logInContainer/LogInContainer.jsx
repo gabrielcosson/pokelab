@@ -56,9 +56,13 @@ export const LogInContainer = (props) => {
     <div className={LogInContainerStyle.container}>
       <h1 className={LogInContainerStyle.title}>Log In</h1>
       <h5 className={LogInContainerStyle.info}>
-        Doesn't have an account yet? <Link to="/signUp">Sign Up</Link>
+        Don't have an account yet? <Link to="/signUp">Sign Up</Link>
       </h5>
       <LogInFields newUser={gettingInfoForm}></LogInFields>
+      <div className={LogInContainerStyle.recoverContainer}>
+        <Link className={LogInContainerStyle.recoverLink} to="/recovery">Forgot Password</Link>
+      </div>
+      
       {errorStatus !== "" && (
         <h1 className={LogInContainerStyle.errorMessage}>{errorStatus}</h1>
       )}
