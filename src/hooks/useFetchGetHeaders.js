@@ -17,7 +17,6 @@ const useFetchGetHeaders = (baseURL) => {
   const getFetch = async () => {
     setState({ ...state, isLoadin: true });
     try {
-      console.log('globalUser en useFetch Header');
       const resp = await axios.get(baseURL, {headers: {
         'connected': globalUser.username
       }}).then((response) => {
