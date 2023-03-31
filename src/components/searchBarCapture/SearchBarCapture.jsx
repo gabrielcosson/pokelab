@@ -1,18 +1,19 @@
-import SearchBarStyle from "./SearchBar.module.css";
+import SearchBarCaptureStyle from "./SearchBarCapture.module.css";
 import searchIcon from "../../assets/search.png";
 import { useEffect, useState } from "react";
 import useFetchGetParams from "../../hooks/useFetchGetParams";
 
-const SearchBar = (props) => {
+const SearchBarCapture = (props) => {
   const [pokemonName, setPokemonName] = useState("");
   const [errorStatus, setErrorStatus] = useState("");
+
   const onPokemonNameChange = ({ target }) => {
     setPokemonName(target.value);
   };
 
   return (
-    <div className={SearchBarStyle.searchBar}>
-      <div className={SearchBarStyle.searchForm}>
+    <div className={SearchBarCaptureStyle.searchBar}>
+      <div className={SearchBarCaptureStyle.searchForm}>
         <input
           type="text"
           placeholder="Pokemon Name or Pokemon ID..."
@@ -20,16 +21,15 @@ const SearchBar = (props) => {
           value={pokemonName}
         ></input>
         <button
-          className={SearchBarStyle.button}
+          className={SearchBarCaptureStyle.button}
           type="submit"
-          onClick={searchPokemon}
         >
-          <img className={SearchBarStyle.buttonIcon} src={searchIcon}></img>
-          <h1 className={SearchBarStyle.buttonText}>Search</h1>
+          <img className={SearchBarCaptureStyle.buttonIcon} src={searchIcon}></img>
+          <h1 className={SearchBarCaptureStyle.buttonText}>Search</h1>
         </button>
       </div>
     </div>
   );
 };
 
-export default SearchBar;
+export default SearchBarCapture;
