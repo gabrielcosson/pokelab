@@ -6,58 +6,54 @@ import { useEffect, useState } from "react";
 import useFetchPost from "../../hooks/useFetchPost";
 
 const RecoveryContainer = (props) => {
+  
   const [user, setUser] = useState({
-    name: '',
     email: '',
-    username: '',
+    questionAnswer: '',
     password: '',
     confirmPassword: '',
   });
-   const [errorStatus, setErrorStatus] = useState("");
-   const [successFulStatus, setSuccessFulStatus] = useState("");
+
+  const [errorStatus, setErrorStatus] = useState("");
+  const [successfulStatus, setSuccessfulStatus] = useState("");
 
   const gettingInfoForm = (data, type) => {
     if (type === 'email') setUser({ ...user, email: data });
+    else if (type === 'questionAnswer') setUser({ ...user, questionAnswer: data });
     else if (type === 'password') setUser({ ...user, password: data });
-    else if (type === 'name') setUser({ ...user, name: data });
-    else if (type === 'username') setUser({ ...user, username: data });
     else if (type === 'confirmPassword') setUser({ ...user, confirmPassword: data });
-    
   };
 
    const { postFetch, data, isLoading, hasError } = useFetchPost();
     useEffect(() => {
-      if(successFulStatus!==''){
-        setSuccessFulStatus('')
+      if(successfulStatus!==''){
+        setSuccessfulStatus('')
       }
-    if (hasError !== null) {
-      setErrorStatus(data.message);
-      console.warn("Este es el error ", hasError);
-      return;
-    }
-    if (data?.id){
-      if(errorStatus!==''){
-        setErrorStatus('')
+      if (hasError !== null) {
+        setErrorStatus(data.message);
+        console.warn(hasError);
+        return;
       }
-      setSuccessFulStatus('Usuario creado correctamente');
-    }
+      if (data?.id){
+        if(errorStatus!==''){
+          setErrorStatus('')
+        }
+        setSuccessfulStatus('The password has changed successfully');
+      }
     }, [data])
-    
+
     const validateInfo = async () => {
       if(user.password === user.confirmPassword){
-        const validatedUser = {
-          ...user
-        }
+        const validatedUser = {...user}
         delete validatedUser.confirmPassword;
-        await postFetch(
+        /*await postFetch(
           "http://localhost:8080/pokedex/auth/signUp",
           validatedUser,
           ""
-        );
+        );*/
       }else{
-        setErrorStatus("Password missmatch");
+        setErrorStatus("The provided passwords do not match. Please verify.");
       }
-      
     };
 
   return (
@@ -72,9 +68,9 @@ const RecoveryContainer = (props) => {
         {errorStatus !== "" && (
           <h1 className={RecoveryContainerStyle.errorMessage}>{errorStatus}</h1>
         )}
-        {successFulStatus !== "" && (
+        {successfulStatus !== "" && (
           <h1 className={RecoveryContainerStyle.succesfulMessage}>
-            {successFulStatus}
+            {successfulStatus}
           </h1>
         )}
         <div

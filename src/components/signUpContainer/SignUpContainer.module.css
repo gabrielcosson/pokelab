@@ -1,8 +1,8 @@
 .container{
     position: absolute;
     background-color: white;
-    width: 400px;
-    height: 550px;
+    width: 25%;
+    height: 82%;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 3px #ccc;
     border-radius: 10px;

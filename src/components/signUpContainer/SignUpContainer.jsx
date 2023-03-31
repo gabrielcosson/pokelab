@@ -12,9 +12,11 @@ const SignUpContainer = (props) => {
     username: '',
     password: '',
     confirmPassword: '',
+    questionAnswer: '',
   });
-   const [errorStatus, setErrorStatus] = useState("");
-   const [successFulStatus, setSuccessFulStatus] = useState("");
+
+  const [errorStatus, setErrorStatus] = useState("");
+  const [successfulStatus, setSuccessfulStatus] = useState("");
 
   const gettingInfoForm = (data, type) => {
     if (type === 'email') setUser({ ...user, email: data });
@@ -22,24 +24,25 @@ const SignUpContainer = (props) => {
     else if (type === 'name') setUser({ ...user, name: data });
     else if (type === 'username') setUser({ ...user, username: data });
     else if (type === 'confirmPassword') setUser({ ...user, confirmPassword: data });
-    
+    else if (type === 'questionAnswer') setUser({ ...user, questionAnswer: data });
   };
+
    const { postFetch, data, isLoading, hasError } = useFetchPost();
     useEffect(() => {
-      if(successFulStatus!==''){
-        setSuccessFulStatus('')
+      if(successfulStatus!==''){
+        setSuccessfulStatus('')
       }
-    if (hasError !== null) {
-      setErrorStatus(data.message);
-      console.warn("Este es el error ", hasError);
-      return;
-    }
-    if (data?.id){
-      if(errorStatus!==''){
-        setErrorStatus('')
+      if (hasError !== null) {
+        setErrorStatus(data.message);
+        console.warn(hasError);
+        return;
       }
-      setSuccessFulStatus('Usuario creado correctamente');
-    }
+      if (data?.id){
+        if(errorStatus!==''){
+          setErrorStatus('')
+        }
+        setSuccessfulStatus('Pokemon Trainer successfully created');
+      }
     }, [data])
     
     const validateInfo = async () => {
@@ -54,7 +57,7 @@ const SignUpContainer = (props) => {
           ""
         );
       }else{
-        setErrorStatus("Password missmatch");
+        setErrorStatus("The provided passwords do not match. Please verify");
       }
       
     };
@@ -71,9 +74,9 @@ const SignUpContainer = (props) => {
         {errorStatus !== "" && (
           <h1 className={SignUpContainerStyle.errorMessage}>{errorStatus}</h1>
         )}
-        {successFulStatus !== "" && (
+        {successfulStatus !== "" && (
           <h1 className={SignUpContainerStyle.succesfulMessage}>
-            {successFulStatus}
+            {successfulStatus}
           </h1>
         )}
         <div
