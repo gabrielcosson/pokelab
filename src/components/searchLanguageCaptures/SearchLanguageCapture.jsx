@@ -8,7 +8,10 @@ const SearchLanguageCapture = (props) => {
     return (
       <div className={SearchLanguageCaptureStyle.container}>
         <div className={SearchLanguageCaptureStyle.searchBar}>
-          <SearchBarCapture language={props.language}></SearchBarCapture>
+          <SearchBarCapture
+            language={props.language}
+            updateSearch={props.updateSearch}
+          ></SearchBarCapture>
         </div>
         <div className={SearchLanguageCaptureStyle.languages}>
           <LanguageCapture></LanguageCapture>
