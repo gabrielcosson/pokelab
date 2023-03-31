@@ -10,7 +10,9 @@ const SearchBarCapture = (props) => {
   const onPokemonNameChange = ({ target }) => {
     setPokemonName(target.value);
   };
-
+  const searchPokemon = () => {
+    props.updateSearch(pokemonName);
+  };
   return (
     <div className={SearchBarCaptureStyle.searchBar}>
       <div className={SearchBarCaptureStyle.searchForm}>
@@ -23,8 +25,12 @@ const SearchBarCapture = (props) => {
         <button
           className={SearchBarCaptureStyle.button}
           type="submit"
+          onClick={searchPokemon}
         >
-          <img className={SearchBarCaptureStyle.buttonIcon} src={searchIcon}></img>
+          <img
+            className={SearchBarCaptureStyle.buttonIcon}
+            src={searchIcon}
+          ></img>
           <h1 className={SearchBarCaptureStyle.buttonText}>Search</h1>
         </button>
       </div>
