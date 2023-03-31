@@ -1,11 +1,11 @@
-import SignUpContainerStyle from "./SignUpContainer.module.css";
-import SignUpFields from "../signUpFields/SignUpFields";
+import RecoveryContainerStyle from "./RecoveryContainer.module.css";
+import RecoveryFields from "../recoveryFields/RecoveryFields";
 import { Link } from "react-router-dom";
-import buttonIcon from "../../assets/signup.png";
+import passwordRecoveryIcon from "../../assets/passwordRecoveryIcon.png";
 import { useEffect, useState } from "react";
 import useFetchPost from "../../hooks/useFetchPost";
 
-const SignUpContainer = (props) => {
+const RecoveryContainer = (props) => {
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -24,6 +24,7 @@ const SignUpContainer = (props) => {
     else if (type === 'confirmPassword') setUser({ ...user, confirmPassword: data });
     
   };
+
    const { postFetch, data, isLoading, hasError } = useFetchPost();
     useEffect(() => {
       if(successFulStatus!==''){
@@ -61,35 +62,35 @@ const SignUpContainer = (props) => {
 
   return (
     <>
-      <div className={SignUpContainerStyle.page}></div>
-      <div className={SignUpContainerStyle.container}>
-        <h1 className={SignUpContainerStyle.title}>Sign Up</h1>
-        <h5 className={SignUpContainerStyle.info}>
-          Already have an account? <Link to="/logIn">Log In</Link>
+      <div className={RecoveryContainerStyle.page}></div>
+      <div className={RecoveryContainerStyle.container}>
+        <h1 className={RecoveryContainerStyle.title}>Recovery</h1>
+        <h5 className={RecoveryContainerStyle.info}>
+          No need to change the password? <Link to="/logIn">Log In</Link>
         </h5>
-        <SignUpFields newUser={gettingInfoForm}></SignUpFields>
+        <RecoveryFields></RecoveryFields>
         {errorStatus !== "" && (
-          <h1 className={SignUpContainerStyle.errorMessage}>{errorStatus}</h1>
+          <h1 className={RecoveryContainerStyle.errorMessage}>{errorStatus}</h1>
         )}
         {successFulStatus !== "" && (
-          <h1 className={SignUpContainerStyle.succesfulMessage}>
+          <h1 className={RecoveryContainerStyle.succesfulMessage}>
             {successFulStatus}
           </h1>
         )}
         <div
           onClick={() => validateInfo()}
-          className={SignUpContainerStyle.button}
+          className={RecoveryContainerStyle.button}
         >
           <img
-            alt="signUp.png"
-            className={SignUpContainerStyle.buttonIcon}
-            src={buttonIcon}
+            alt="passwordRecovery.png"
+            className={RecoveryContainerStyle.buttonIcon}
+            src={passwordRecoveryIcon}
           />
-          <h1 className={SignUpContainerStyle.buttonText}>CREATE ACCOUNT</h1>
+          <h1 className={RecoveryContainerStyle.buttonText}>CHANGE ACCOUNT PASSWORD</h1>
         </div>
       </div>
     </>
   );
 };
 
-export default SignUpContainer;
+export default RecoveryContainer;

@@ -7,7 +7,9 @@ import ProtectedRoutes from "../components/protectingRoutes/ProtectedRoutes";
 import { Captures } from "./Captures";
 import Details from "./Details";
 import Home from "./Home";
-import SignUp from "./SignUp.jsx";
+import SignUp from "./SignUp";
+import PasswordRecovery from "./PasswordRecovery";
+import NotFound from "./NotFound";
 
 const LogIn = () => {
     const [widthBurgerMenu, setWidthBurgerMenu] = useState({ width: `0%` });
@@ -49,7 +51,8 @@ const LogIn = () => {
       >
         <Routes>
           <Route path="/logIn" element={<LogInStructure />} />
-          <Route path="/signUp/*" element={<SignUp />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/recovery" element={<PasswordRecovery></PasswordRecovery>} />
           <Route
             path="/home/:language"
             element={
@@ -75,6 +78,8 @@ const LogIn = () => {
             }
           />
           <Route path="/" element={<Navigate to="/logIn" />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AppContext.Provider>
     </BrowserRouter>
