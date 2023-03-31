@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import { AppContext } from "../components/appContext/AppContext";
 import AppProvider from "../components/appContext/AppProvider";
 import LogInStructure from "../components/logInStructure/LogInStructure";
+import ProtectedRoutes from "../components/protectingRoutes/ProtectedRoutes";
 import { Captures } from "./Captures";
 import Details from "./Details";
 import Home from "./Home";
@@ -18,7 +19,8 @@ const LogIn = () => {
       username: '',
       name: '',
       password: '',
-      role: ''
+      role: '',
+      connected: false
     });
 
     const display = () => {
@@ -48,9 +50,30 @@ const LogIn = () => {
         <Routes>
           <Route path="/logIn" element={<LogInStructure />} />
           <Route path="/signUp/*" element={<SignUp />} />
-          <Route path="/home/:language" element={<Home />} />
-          <Route path="/captures/:language" element={<Captures />} />
-          <Route path="/details/:language/:pokemon" element={<Details />} />
+          <Route
+            path="/home/:language"
+            element={
+              <ProtectedRoutes>
+                <Home />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/captures/:language"
+            element={
+              <ProtectedRoutes>
+                <Captures />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/details/:language/:pokemon"
+            element={
+              <ProtectedRoutes>
+                <Details />
+              </ProtectedRoutes>
+            }
+          />
           <Route path="/" element={<Navigate to="/logIn" />} />
         </Routes>
       </AppContext.Provider>

@@ -47,13 +47,16 @@ const HomeStructure = (props) => {
   });
   
   const { data, isLoadin, hasError } = useFetchGet(url);
-
   return (
     <>
       <InHeader username={globalUser.username}></InHeader>
       <div className={HomeStructureStyle.complete}>
         <div className={HomeStructureStyle.burgerMenu} style={widthBurgerMenu}>
-          <BurgerMenu language = {language} userName={globalUser.name} userRole={globalUser.role}></BurgerMenu>
+          <BurgerMenu
+            language={language}
+            userName={globalUser.name}
+            userRole={globalUser.role}
+          ></BurgerMenu>
         </div>
         <div className={HomeStructureStyle.pokemonList} style={widthList}>
           <SearchLanguage updateSearch = {updateSearch} language= {language}></SearchLanguage>
