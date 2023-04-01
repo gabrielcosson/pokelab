@@ -17,3 +17,45 @@
     margin-right: 5%;
     padding-top: 1%;
 }
+
+/* Desktop */
+@media (max-width: 1200px) {
+
+}
+
+
+/* Tablet */
+
+@media (max-width: 820px) {
+    .container{
+        display: block;
+    }
+
+    .searchBar{
+        margin-top: 2%;
+        width: 90%;
+        height: 4vh;
+    }
+    
+    .languages{
+        width: 90%;
+    }
+
+}
+
+
+/* Phone */
+@media (max-width: 576px) {
+    .container{
+        display: block;
+    }
+
+    .searchBar{
+        margin-top: 5%;
+        width: 90%;
+    }
+    
+    .languages{
+        width: 90%;
+    }
+}

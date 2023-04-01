@@ -59,3 +59,38 @@
 .backButton{
     border: 0 solid;
 }
+
+/* Desktop */
+
+@media (max-width: 1200px) {
+
+
+
+}
+
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+.title{
+    font-size: 25px;
+    margin-left: 5%;
+}
+
+.back{
+    width: 30px;
+    height: 30px;
+}
+
+}
+
+
+
+/* Phone */
+
+@media (max-width: 576px) {
+
+
+
+}

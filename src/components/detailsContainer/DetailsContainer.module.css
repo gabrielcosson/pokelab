@@ -89,3 +89,47 @@
 h1{
     color: white;
 }
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .detailsContainer{
+        display: block;
+    }
+
+    .firstColumn{
+        width: 100%;
+    }
+
+    .secondColumn{
+        width: 100%;
+    }
+
+    .thirdColumn{
+        width: 100%;
+    }
+
+    .nameTypeContainer{
+        display: block;
+    }
+
+    .image{
+        height: 85%;
+        width: 65%;
+    }
+    
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+}
+
+
+/* Phone */
+@media (max-width: 576px) {
+    .imageContainer{
+
+        margin-top: 20%;
+    }
+
+}

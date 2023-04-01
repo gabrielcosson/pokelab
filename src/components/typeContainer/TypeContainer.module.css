@@ -9,3 +9,23 @@
     margin-right: 50px;
     font-style: italic;
 }
+
+/* Desktop */
+
+@media (max-width: 1200px) {
+
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+}
+
+/* Phone */
+
+@media (max-width: 576px) {
+    .type{
+        font-size: 20px;
+    }
+}
