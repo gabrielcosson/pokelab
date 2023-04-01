@@ -16,58 +16,43 @@ const CaptureStructure = (props) => {
   const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
   const [disabled, setDisabled] = useState(false);
   const [foundPokemon, setFoundPokemon] = useState("");
-  const [url, setUrl] = useState("");
-  const [filteredPokemon, setFilteredPokemon] = useState(null);
-  
-  const { data, isLoadin, hasError } = useFetchGetHeaders(url);
-  
-  const {
-    data: dataAll,
-    isLoadin: isLoadingAll,
-    hasError: hasErrorAll,
-  } = useFetchGetHeaders(
-    `http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=50&offset=${pageOffset}&language=${language}`
-  );
+  const [quantity, setQuantity] = useState(12);
+  const { data, isLoadin, hasError } = useFetchGetHeaders(`http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=${quantity}&offset=${pageOffset}&language=${language}`);
+  const [finalData, setFinalData] = useState(data);
 
   function updateSearch(pokemonName) {
     if(pokemonName !==''){
       setFoundPokemon(pokemonName);
     }else{
-      setUrl(`http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
-      setFilteredPokemon(null);
+      setFoundPokemon("");
     }
   }
 
   useEffect(() => {
     if (data != null) {
+      const pokemonExist = data.results.filter(
+        (pokemon) => pokemon.nickname.toLowerCase().includes(foundPokemon.toLowerCase()) || pokemon.name.toLowerCase().includes(foundPokemon.toLowerCase())
+      );
+      const dataReplic = {...data, results:pokemonExist}
+      setFinalData(dataReplic);
+      
       if (data.results.length < 12) {
         setDisabled(true);
       } else {
         setDisabled(false);
-      }
+      }      
     }
   }, [data]);
 
   useEffect(() => {
     if (foundPokemon !== "") {
-      const pokemonExist = dataAll.results.filter(
-        (pokemon) => pokemon.nickname.toLowerCase().includes(foundPokemon.toLowerCase()) || pokemon.name.toLowerCase().includes(foundPokemon.toLowerCase())
-      );
-      const dataReplic = {...data, results:pokemonExist}
-      setFilteredPokemon(dataReplic);
+      setQuantity(50);
     } else {
-      setUrl(url);
+      setQuantity(12);
     }
   }, [foundPokemon]);
 
-  useEffect(() => {}, [filteredPokemon]);
-
-  useEffect(() => {
-    setUrl(`http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`)
-  }, [pageOffset]);
-
-  console.log(url)
-
+  
   return (
     <>
       <InHeader username={globalUser.username}></InHeader>
@@ -98,10 +83,7 @@ const CaptureStructure = (props) => {
             ></PaginationCaptures>
           </div>
           {isLoadin === true && <Spinner></Spinner>}
-          {isLoadin === false && filteredPokemon === null && (
-            <PokemonList data={data}></PokemonList>
-          )}
-          {isLoadin === false && filteredPokemon !== null && <PokemonList data={filteredPokemon}></PokemonList>}
+          {isLoadin === false && finalData !== null && <PokemonList data={finalData}></PokemonList>}
         </div>
       </div>
     </>
