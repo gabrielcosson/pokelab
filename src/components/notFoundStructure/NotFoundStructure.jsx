@@ -15,7 +15,7 @@ const NotFoundStructure = (props) => {
                 <h1 className={NotFoundStructureStyle.errorCode}>404</h1>
                 <h1 className={NotFoundStructureStyle.introMessage}>"You Can't Expect To Win Every Single Battle..."</h1>
                 <h1 className={NotFoundStructureStyle.errorMessage}>Looks like we couldn't find the URL you asked for.</h1>
-                <Link to="/" className={NotFoundStructureStyle.link}>
+                <Link to="/home/en" className={NotFoundStructureStyle.link}>
                     <div className={NotFoundStructureStyle.button}>
                     <h1 className={NotFoundStructureStyle.buttonText}>Back to Home</h1>
                     </div>
