@@ -18,7 +18,7 @@ const SearchBarCapture = (props) => {
       <div className={SearchBarCaptureStyle.searchForm}>
         <input
           type="text"
-          placeholder="Pokemon Name or Pokemon ID..."
+          placeholder="Search by Name or Nickname..."
           onChange={onPokemonNameChange}
           value={pokemonName}
         ></input>

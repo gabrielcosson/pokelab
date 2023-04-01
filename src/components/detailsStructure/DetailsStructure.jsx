@@ -35,12 +35,12 @@ const DetailsStructure = (props) => {
                 </div>
                 <div className={DetailsStructureStyle.details} style={widthList}>
                     <div className={DetailsStructureStyle.detailsHeader}>
-                        <Link to={from} state={{ pageConsistent: page }}><img className={DetailsStructureStyle.back} src={backButton}></img></Link>
+                        <Link to={from} state={{ from: from, pageConsistent: page }}><img className={DetailsStructureStyle.back} src={backButton}></img></Link>
                         <div className={DetailsStructureStyle.titleContainer}>
                             <h1 className={DetailsStructureStyle.title}>Pokedex</h1>
                         </div>
                         <div className={DetailsStructureStyle.languageContainer}>
-                            <LanguageOptions pokemonName = {pokemon}></LanguageOptions>
+                            <LanguageOptions from = {from} pageConsistent= {page} pokemonName = {pokemon}></LanguageOptions>
                         </div>
                     </div>
                     {isLoadin === true && isLoadinEvolution === true && <Spinner></Spinner>}

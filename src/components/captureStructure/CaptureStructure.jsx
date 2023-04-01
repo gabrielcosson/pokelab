@@ -3,7 +3,6 @@ import { Component, useContext, useEffect, useState } from "react";
 import Spinner from "../spinner/Spinner";
 import PokemonList from "../pokemonList/PokemonList";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
-import SearchLanguage from "../searchLanguage/SearchLanguage";
 import { useParams } from "react-router-dom";
 import InHeader from "../inHeader/InHeader";
 import { AppContext } from "../appContext/AppContext";
@@ -17,11 +16,11 @@ const CaptureStructure = (props) => {
   const { widthBurgerMenu, widthList, globalUser } = useContext(AppContext);
   const [disabled, setDisabled] = useState(false);
   const [foundPokemon, setFoundPokemon] = useState("");
-  const [url, setUrl] = useState(
-    `http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`
-  );
+  const [url, setUrl] = useState("");
   const [filteredPokemon, setFilteredPokemon] = useState(null);
+  
   const { data, isLoadin, hasError } = useFetchGetHeaders(url);
+  
   const {
     data: dataAll,
     isLoadin: isLoadingAll,
@@ -34,7 +33,7 @@ const CaptureStructure = (props) => {
     if(pokemonName !==''){
       setFoundPokemon(pokemonName);
     }else{
-      setUrl(url);
+      setUrl(`http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`);
       setFilteredPokemon(null);
     }
   }
@@ -52,20 +51,22 @@ const CaptureStructure = (props) => {
   useEffect(() => {
     if (foundPokemon !== "") {
       const pokemonExist = dataAll.results.filter(
-        (name) => name.nickname === foundPokemon
+        (pokemon) => pokemon.nickname.toLowerCase().includes(foundPokemon.toLowerCase()) || pokemon.name.toLowerCase().includes(foundPokemon.toLowerCase())
       );
       const dataReplic = {...data, results:pokemonExist}
       setFilteredPokemon(dataReplic);
-      
     } else {
       setUrl(url);
     }
   }, [foundPokemon]);
 
-  useEffect(() => {
+  useEffect(() => {}, [filteredPokemon]);
 
-  }, [filteredPokemon]);
-  
+  useEffect(() => {
+    setUrl(`http://localhost:8080/pokedex/pokemon-trainer/${globalUser.username}/pokemon?quantity=12&offset=${pageOffset}&language=${language}`)
+  }, [pageOffset]);
+
+  console.log(url)
 
   return (
     <>
