@@ -1,29 +1,30 @@
 import { useState } from "react";
 import RecoveryFieldsStyle from "./RecoveryFields.module.css";
 
-const RecoveryFields = () => {
+const RecoveryFields = ({ changingPassword }) => {
   const [email, setEmail] = useState("");
   const [securityQuestion, setSecurityQuestion] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-
   const onInputEmailChange = ({ target }) => {
     setEmail(target.value);
+    changingPassword(target.value, "email");
   };
 
   const onInputQuestionChange = ({ target }) => {
-    setUsername(target.value);
+    setSecurityQuestion(target.value);
+    changingPassword(target.value, "questionAnswer");
   };
 
   const onInputPasswordChange = ({ target }) => {
     setPassword(target.value);
+    changingPassword(target.value, "password");
   };
   const onInputConfirmPasswordChange = ({ target }) => {
     setConfirmPassword(target.value);
+    changingPassword(target.value, "confirmPassword");
   };
-
- 
 
   return (
     <form>
@@ -38,7 +39,9 @@ const RecoveryFields = () => {
         ></input>
       </div>
 
-      <h6 className={RecoveryFieldsStyle.title}>What is the name of your first pet?</h6>
+      <h6 className={RecoveryFieldsStyle.title}>
+        What is the name of your first pet?
+      </h6>
       <div className={RecoveryFieldsStyle.inputSpace}>
         <input
           type="text"
