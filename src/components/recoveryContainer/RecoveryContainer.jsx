@@ -6,55 +6,53 @@ import { useEffect, useState } from "react";
 import useFetchPost from "../../hooks/useFetchPost";
 
 const RecoveryContainer = (props) => {
-  
   const [user, setUser] = useState({
-    email: '',
-    questionAnswer: '',
-    password: '',
-    confirmPassword: '',
+    email: "",
+    question_answer: "",
+    newPassword: "",
+    confirmPassword: "",
   });
 
   const [errorStatus, setErrorStatus] = useState("");
   const [successfulStatus, setSuccessfulStatus] = useState("");
 
   const gettingInfoForm = (data, type) => {
-    if (type === 'email') setUser({ ...user, email: data });
-    else if (type === 'questionAnswer') setUser({ ...user, questionAnswer: data });
-    else if (type === 'password') setUser({ ...user, password: data });
-    else if (type === 'confirmPassword') setUser({ ...user, confirmPassword: data });
+    if (type === "email") setUser({ ...user, email: data });
+    else if (type === "questionAnswer")
+      setUser({ ...user, question_answer: data });
+    else if (type === "password") setUser({ ...user, newPassword: data });
+    else if (type === "confirmPassword")
+      setUser({ ...user, confirmPassword: data });
   };
 
-   const { postFetch, data, isLoading, hasError } = useFetchPost();
-    useEffect(() => {
-      if(successfulStatus!==''){
-        setSuccessfulStatus('')
-      }
-      if (hasError !== null) {
-        setErrorStatus(data.message);
-        console.warn(hasError);
-        return;
-      }
-      if (data?.id){
-        if(errorStatus!==''){
-          setErrorStatus('')
-        }
-        setSuccessfulStatus('The password has changed successfully');
-      }
-    }, [data])
+  const { postFetch, data, isLoading, hasError } = useFetchPost();
+  useEffect(() => {
+    if (successfulStatus !== "") {
+      setSuccessfulStatus("");
+    }
+    if (hasError !== null) {
+      setErrorStatus(data.message);
+      console.warn(hasError);
+      return;
+    }
+    if (data?.message) {
+      setSuccessfulStatus("The password has changed successfully");
+    }
+  }, [data]);
 
-    const validateInfo = async () => {
-      if(user.password === user.confirmPassword){
-        const validatedUser = {...user}
-        delete validatedUser.confirmPassword;
-        /*await postFetch(
-          "http://localhost:8080/pokedex/auth/signUp",
-          validatedUser,
-          ""
-        );*/
-      }else{
-        setErrorStatus("The provided passwords do not match. Please verify.");
-      }
-    };
+  const validateInfo = async () => {
+    if (user.newPassword === user.confirmPassword) {
+      const validatedUser = { ...user };
+      console.log("usuario valido ", validatedUser);
+      await postFetch(
+        "http://localhost:8080/pokedex/auth/forgotPassword",
+        validatedUser,
+        ""
+      );
+    } else {
+      setErrorStatus("The provided passwords do not match. Please verify.");
+    }
+  };
 
   return (
     <>
@@ -64,7 +62,7 @@ const RecoveryContainer = (props) => {
         <h5 className={RecoveryContainerStyle.info}>
           No need to change the password? <Link to="/logIn">Log In</Link>
         </h5>
-        <RecoveryFields></RecoveryFields>
+        <RecoveryFields changingPassword={gettingInfoForm}></RecoveryFields>
         {errorStatus !== "" && (
           <h1 className={RecoveryContainerStyle.errorMessage}>{errorStatus}</h1>
         )}
@@ -82,7 +80,9 @@ const RecoveryContainer = (props) => {
             className={RecoveryContainerStyle.buttonIcon}
             src={passwordRecoveryIcon}
           />
-          <h1 className={RecoveryContainerStyle.buttonText}>CHANGE ACCOUNT PASSWORD</h1>
+          <h1 className={RecoveryContainerStyle.buttonText}>
+            CHANGE ACCOUNT PASSWORD
+          </h1>
         </div>
       </div>
     </>
