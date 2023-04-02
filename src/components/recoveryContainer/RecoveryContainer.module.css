@@ -82,21 +82,6 @@
   margin-bottom: 2%;
 }
 
-/* Desktop */
-
-@media (min-width: 1200px) {
-  .container {
-    width: 40%;
-    height: 70%;
-    top: 55%;
-  }
-  .title {
-    margin-top: 20px;
-  }
-  .info {
-    font-size: 14px;
-  }
-}
 
 /* Tablet */
 

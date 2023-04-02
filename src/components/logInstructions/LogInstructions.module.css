@@ -30,20 +30,6 @@ span {
   font-weight: 900;
   color: red;
 }
-/* Desktop */
-
-@media (max-width: 1200px) {
-  .instructionsContainer {
-    width: 40%;
-    top: 20%;
-  }
-  .image {
-    width: 80px;
-  }
-  .instructions {
-    font-size: 18px;
-  }
-}
 
 
 /* Tablet */
