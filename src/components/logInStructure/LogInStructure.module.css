@@ -13,3 +13,28 @@
     opacity: 0.7;
     position: absolute;
 }
+
+/* Desktop */
+
+@media (max-width: 1200px) {
+  .page{
+    background-size: cover;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .languages div {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* Phone */
+
+@media (max-width: 576px) {
+    
+}
+
+
