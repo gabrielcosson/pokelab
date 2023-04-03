@@ -36,6 +36,7 @@ const RecoveryContainer = (props) => {
     }
     if (data?.message) {
       setSuccessfulStatus("The password has changed successfully");
+      setErrorStatus("");
     }
   }, [data]);
 
