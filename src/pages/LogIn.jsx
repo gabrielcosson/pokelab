@@ -16,6 +16,7 @@ const LogIn = () => {
     const [widthList, setWidthList] = useState({ width: `100%` });
     const [widthActive, setWidthActive] = useState(false);
     const [connect, setConnect] = useState(false);
+
     const [globalUser, setGlobalUser] = useState({
       email: '',
       username: '',
