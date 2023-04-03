@@ -12,20 +12,17 @@
 }
 
 
-/* Tablet */
 @media (max-width: 820px) {
     .statsTitle{
         font-size: 50px;
         margin-bottom: 0;
-        margin-top: 20%;
     }
 
     .individualStat{
         margin-top: 0;    
     }
-
 }
-/* Phone */
+
 @media (max-width: 576px) {
     .statsTitle{
         font-size: 30px;
@@ -35,6 +32,4 @@
     .individualStat{
         margin-top: 0;    
     }
-
-
 }

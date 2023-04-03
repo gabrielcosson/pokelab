@@ -84,7 +84,6 @@
     font-weight: 500;
 }
 
-/* Tablet */
 @media (max-width: 820px) {
     .paginationContainer{
         width: 100%;
@@ -100,7 +99,6 @@
 }
 
 
-/* Phone */
 @media (max-width: 576px) {
     .paginationContainer{
         width: 100%;
@@ -113,5 +111,4 @@
         padding: 2%;
         margin: 2%;
     }
-
 }

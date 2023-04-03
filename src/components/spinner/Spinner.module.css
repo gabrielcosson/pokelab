@@ -52,21 +52,12 @@
     }
 }
 
-
-/* Desktop */
-@media (max-width: 1200px) {
-
+@media (max-width: 820px) {
+    .text{
+        margin-top: 20%;
+    }
 }
 
-
-/* Tablet */
-@media (max-width: 768px) {
-
-
-}
-
-
-/* Phone */
 @media (max-width: 576px) {
     .text{
         margin-top: 40%;

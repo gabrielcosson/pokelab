@@ -90,21 +90,17 @@
   cursor: pointer;
 }
 
-/* Tablet */
-
 @media (max-width: 820px) {
   .pokeball {
     height: 50%;
-    width: 50%;
+    width: 70%;
   }
 }
-
-/* Phone */
 
 @media (max-width: 576px) {
   .pokeball {
     height: 50%;
-    width: 70%;
+    width: 90%;
   }
   .errorMessage {
     font-size: 0.5rem;

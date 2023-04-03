@@ -39,14 +39,6 @@
 }
 
 
-/* Desktop */
-@media (max-width: 1200px) {
-
-}
-
-
-/* Tablet */
-
 @media (max-width: 820px) {
     .languages div{
         height: 60px;
@@ -55,7 +47,6 @@
 }
 
 
-/* Phone */
 @media (max-width: 576px) {
     .languages{
         padding: 0;
@@ -65,6 +56,4 @@
         height: 35px;
         width: 35px;
     }
-    
-    
 }

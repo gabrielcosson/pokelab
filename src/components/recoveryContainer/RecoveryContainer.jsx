@@ -32,7 +32,6 @@ const RecoveryContainer = (props) => {
     }
     if (hasError !== null) {
       setErrorStatus(data.message);
-      console.warn(hasError);
       return;
     }
     if (data?.message) {
@@ -43,7 +42,6 @@ const RecoveryContainer = (props) => {
   const validateInfo = async () => {
     if (user.newPassword === user.confirmPassword) {
       const validatedUser = { ...user };
-      console.log("usuario valido ", validatedUser);
       await postFetch(
         "http://localhost:8080/pokedex/auth/forgotPassword",
         validatedUser,

@@ -15,24 +15,11 @@
     font-style: italic;
 }
 
-/* Desktop */
-@media (max-width: 1200px) {
-
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-
-}
-
-/* Phone */
-
 @media (max-width: 576px) {
     .typeContainer{
-        width: 20%;
+        width: 30%;
         margin: 5px;
         display: block;
-
     }
 
     .type{
@@ -43,6 +30,5 @@
 
     .typeImage{
         width: 100%;
-}
-
+    }
 }

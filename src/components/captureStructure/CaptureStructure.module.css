@@ -62,7 +62,6 @@
     font-weight: 500;
 }
 
-/* Tablet */
 @media (max-width: 820px) {
     .listHeader{
         display: block;
@@ -79,8 +78,6 @@
 
 }
 
-
-/* Phone */
 @media (max-width: 576px) {
     .listHeader{
         display: block;

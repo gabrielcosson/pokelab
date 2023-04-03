@@ -38,27 +38,9 @@
   background-image: url(../../assets/ja.png);
 }
 
-/* Desktop */
-
-@media (max-width: 1200px) {
-  .languages div {
-    box-shadow: 5px 5px 5px rgb(128, 128, 128);
-  }
-  .languages {
-    height: 30px;
-  }
-}
-
-/* Tablet */
-
 @media (max-width: 768px) {
   .languages div {
     height: 30px;
     width: 30px;
   }
-}
-
-/* Phone */
-
-@media (max-width: 576px) {
 }

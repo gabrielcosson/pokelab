@@ -50,31 +50,13 @@
   color: white;
 }
 
-/* Desktop */
 
-@media (max-width: 1200px) {
-  .username {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  .greet {
-    font-size: 28px;
-    font-weight: 400;
-    margin-right: auto;
-  }
-  .logoContainer {
-    justify-content: center;
-  }
-}
-
-/* Tablet */
-
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .username {
     font-size: 18px;
   }
   .greet {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 400;
     margin-right: auto;
   }
@@ -83,11 +65,10 @@
   }
 }
 
-/* Phone */
 
 @media (max-width: 576px) {
   .username {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 800;
   }
   .greet {

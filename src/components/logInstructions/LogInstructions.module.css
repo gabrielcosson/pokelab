@@ -32,8 +32,6 @@ span {
 }
 
 
-/* Tablet */
-
 @media (max-width: 820px) {
   .instructionsContainer {
     width: 66%;
@@ -46,8 +44,6 @@ span {
     font-size: 18px;
   }
 }
-
-/* Phone */
 
 @media (max-width: 576px) {
   .instructionsContainer {

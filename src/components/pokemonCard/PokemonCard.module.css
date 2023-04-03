@@ -46,15 +46,12 @@
 
 }
 
-
-/* Tablet */
 @media (max-width: 820px) {
     .container{
         width: 40%;
         margin-left: 5%;
         height: 18vh;
         margin-bottom: 5%;
-
     }
 
     .image{
@@ -63,8 +60,6 @@
     }    
 }
 
-
-/* Phone */
 @media (max-width: 576px) {
     .container{
         width: 80%;
@@ -76,6 +71,5 @@
     .image{
         width: 50%;
         left: 50%;
-
     }    
 }

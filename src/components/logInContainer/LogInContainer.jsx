@@ -27,7 +27,6 @@ export const LogInContainer = (props) => {
   useEffect(() => {
     if (hasError !== null) {
       setErrorStatus(data.message);
-      console.warn("Este es el error ", data.message);
       return;
     }
     if (data?.id) {

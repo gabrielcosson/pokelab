@@ -37,22 +37,3 @@
 .japanese{
     background-image: url(../../assets/ja.png);
 }
-
-/* Desktop */
-@media (max-width: 1200px) {
-
-}
-
-
-/* Tablet */
-
-@media (max-width: 768px) {
-
-
-}
-
-
-/* Phone */
-@media (max-width: 576px) {
-    
-}
