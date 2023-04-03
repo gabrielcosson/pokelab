@@ -34,7 +34,6 @@ const SignUpContainer = (props) => {
       }
       if (hasError !== null) {
         setErrorStatus(data.message);
-        console.warn(hasError);
         return;
       }
       if (data?.id){

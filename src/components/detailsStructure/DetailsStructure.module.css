@@ -60,18 +60,10 @@
     border: 0 solid;
 }
 
-
-/* Desktop */
-@media (max-width: 1200px) {
-
-}
-
-
-/* Tablet */
 @media (max-width: 820px) {
     .detailsHeader{
         display: block;
-        height: 25%;
+        height: 20%;
     }
 
     .languageContainer{
@@ -95,8 +87,6 @@
 
 }
 
-
-/* Phone */
 @media (max-width: 576px) {
     .detailsHeader{
         display: block;

@@ -57,7 +57,6 @@
 }
 
 
-/* Tablet */
 @media (max-width: 820px) {
     .searchForm{
         width: 100%;
@@ -70,7 +69,6 @@
 }
 
 
-/* Phone */
 @media (max-width: 576px) {
     .searchForm{
         width: 100%;
