@@ -11,7 +11,7 @@ export const LogInContainer = (props) => {
     email: "",
     password: "",
   });
-
+  const [numberOfTry, setNumberOfTry] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [errorStatus, setErrorStatus] = useState("");
 
@@ -27,6 +27,7 @@ export const LogInContainer = (props) => {
   useEffect(() => {
     if (hasError !== null) {
       setErrorStatus(data.message);
+      setNumberOfTry(numberOfTry + 1);
       return;
     }
     if (data?.id) {
@@ -36,7 +37,7 @@ export const LogInContainer = (props) => {
         email: data.email,
         password: data.password,
         role: data.role,
-        connected: true
+        connected: true,
       };
       setGlobalUser(nameObj);
       setSubmitting(true);
@@ -59,9 +60,13 @@ export const LogInContainer = (props) => {
       </h5>
       <LogInFields newUser={gettingInfoForm}></LogInFields>
       <div className={LogInContainerStyle.recoverContainer}>
-        <Link className={LogInContainerStyle.recoverLink} to="/recovery">Forgot Password</Link>
+        {numberOfTry === 3 && (
+          <Link className={LogInContainerStyle.recoverLink} to="/recovery">
+            Forgot Password
+          </Link>
+        )}
       </div>
-      
+
       {errorStatus !== "" && (
         <h1 className={LogInContainerStyle.errorMessage}>{errorStatus}</h1>
       )}
