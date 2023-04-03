@@ -48,3 +48,68 @@
     color: #535353;
     font-style: italic;
 }
+
+/* Desktop */
+@media (max-width: 1200px) {
+
+}
+
+/* Tablet */
+@media (max-width: 820px) {
+    .evolutionContainer{
+        width: 100%;
+        margin-top: 5%;
+        height: 45%;
+    }
+    
+    .evolutionTitle{
+        font-size: 50px;
+    }
+    
+    .evolutionName{
+        font-size: 30px;
+    }
+    
+    .individualEvolution{
+        height: 100px;
+    }
+    
+    .evolutionImage{
+        height: 100%;
+        width: 16%;
+    }
+    
+    .info{
+        font-size: 25px;
+    }
+}
+
+/* Phone */
+@media (max-width: 576px) {
+    .evolutionContainer{
+        width: 100%;
+        margin-top: 15%;
+        height: 45%;
+    }
+    
+    .evolutionTitle{
+        font-size: 30px;
+    }
+    
+    .evolutionName{
+        font-size: 20px;
+    }
+    
+    .individualEvolution{
+        height: 50px;
+    }
+    
+    .evolutionImage{
+        height: 100%;
+        width: 16%;
+    }
+    
+    .info{
+        font-size: 15px;
+    }
+}

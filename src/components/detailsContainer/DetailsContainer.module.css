@@ -20,6 +20,7 @@
     width: 70%;
     display: flex;
     align-items: center;
+    justify-content: start;
     margin-left: 10px;
 }
 
@@ -69,7 +70,7 @@
 
 .imageContainer{
     height: 350px;
-    width: 450px;    
+    width: 100%;    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,8 +93,53 @@ h1{
 
 /* Desktop */
 @media (max-width: 1200px) {
+
+    
+}
+
+/* Tablet */
+@media (max-width: 820px) {
+    .container{
+        width: 100%;
+        height: 50vh;   
+    }
+
+    .nameTypeContainer{
+        display: block;
+        height: 20%;
+        margin-bottom: 0;
+    }
+
     .detailsContainer{
         display: block;
+    }
+
+    .imageContainer{
+        margin: 0;
+        margin-top: 13%;
+        width: 100%;
+    }
+
+    .name{
+        text-align: center;
+        font-size: 100px;
+    }
+
+    .nameContainer{
+        width: 100%;
+    }
+    
+    .typeContainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;    
+    }
+
+    .image{
+        height: 100%;
+        width: 80%;
     }
 
     .firstColumn{
@@ -101,35 +147,97 @@ h1{
     }
 
     .secondColumn{
-        width: 100%;
+        width: 80%;
+        margin-top: 10%;
+        padding-left: 10%;
+        padding-right: 10%;
+        height: 90vh;
     }
 
     .thirdColumn{
-        width: 100%;
+        width: 80%;
+        padding: 10%;
+        height: 70vh;
     }
 
-    .nameTypeContainer{
-        display: block;
+    .id{
+        font-size: 35px;
     }
-
-    .image{
-        height: 85%;
-        width: 65%;
-    }
-    
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-
 }
 
 
 /* Phone */
 @media (max-width: 576px) {
-    .imageContainer{
 
-        margin-top: 20%;
+    .container{
+        width: 100%;
+        height: 50vh;   
     }
+
+    .nameTypeContainer{
+        display: block;
+        height: 20%;
+        margin-bottom: 0;
+    }
+
+    .detailsContainer{
+        display: block;
+    }
+
+    .imageContainer{
+        margin: 0;
+        margin-top: 1%;
+        width: 100%;
+    }
+
+    .name{
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .nameContainer{
+        width: 100%;
+    }
+    
+    .typeContainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;    
+    }
+
+    .image{
+        height: 100%;
+        width: 80%;
+    }
+
+    .firstColumn{
+        width: 100%;
+        margin-top: 35%;
+        height: 80vh;
+
+    }
+
+    .secondColumn{
+        width: 80%;
+        padding-left: 10%;
+        padding-right: 10%;
+        height: 100vh;
+        margin-top: 0;
+    }
+
+    .thirdColumn{
+        width: 80%;
+        padding: 10%;
+        height: 70vh;
+    }
+
+    .id{
+        font-size: 25px;
+    }
+
+
+
 
 }

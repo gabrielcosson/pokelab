@@ -68,8 +68,14 @@
 @media (max-width: 576px) {
     .container{
         width: 80%;
-        margin-left: 5%;
+        margin-left: 10%;
         margin-bottom: 10%;
         height: 25vh;
     }
+
+    .image{
+        width: 50%;
+        left: 50%;
+
+    }    
 }

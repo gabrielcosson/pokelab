@@ -83,3 +83,35 @@
     cursor: auto;
     font-weight: 500;
 }
+
+/* Tablet */
+@media (max-width: 820px) {
+    .paginationContainer{
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5%;
+    }
+
+    .button{
+        width: 30%;
+        padding: 2%;
+        margin: 2%;
+    }
+}
+
+
+/* Phone */
+@media (max-width: 576px) {
+    .paginationContainer{
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5%;
+    }
+
+    .button{
+        width: 35%;
+        padding: 2%;
+        margin: 2%;
+    }
+
+}
