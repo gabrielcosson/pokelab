@@ -1,0 +1,17 @@
+.typeContainer{
+    width: 70px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    margin-left: 35%;
+    margin-top: 10px;
+}
+
+.type{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    padding-top: 4px;
+    text-align: center;
+}

@@ -1,0 +1,123 @@
+.paginationContainer{
+    height: 50%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.button{
+    width: 15%;
+    padding: 1%;
+    border-radius: 5px;
+    margin: 1%;
+    background-color: rgb(141, 0, 0);
+    color: white;
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    border: 0 solid;
+}
+
+.button:hover{
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.button:disabled{
+    color: rgb(107, 106, 106);
+    background-color: rgb(187, 187, 187);
+    cursor: auto;
+    font-weight: 500;
+}
+
+.pageFinder{
+    display: block;
+    background-color: beige;
+    width: 8%;
+}
+
+.pageFinderInput{
+    display: block;
+    width: 95%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.pageFinderInput::-webkit-inner-spin-button {
+    display: none;
+}
+
+.pageFinderButton{
+    display: block;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(141, 0, 0);
+    color: white;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 5px;
+}
+
+.pageFinderButton:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+.pageFinderButton:disabled{
+    color: rgb(107, 106, 106);
+    background-color: rgb(187, 187, 187);
+    cursor: auto;
+    font-weight: 500;
+}
+
+.pageFinderButton:disabled{
+    color: rgb(107, 106, 106);
+    background-color: rgb(187, 187, 187);
+    cursor: auto;
+    font-weight: 500;
+}
+
+@media (max-width: 820px) {
+    .paginationContainer{
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5%;
+    }
+
+    .button{
+        width: 30%;
+        padding: 2%;
+        margin: 2%;
+    }
+
+    .pageFinder{
+        width: 12%;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .paginationContainer{
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5%;
+    }
+
+    .button{
+        width: 35%;
+        padding: 2%;
+        margin: 2%;
+    }
+
+    .pageFinder{
+        width: 12%;
+    }
+}
+
