@@ -6,7 +6,7 @@
 
 .valueContainer{
     width: 100%;
-    height: 80%;
+    height: 35px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -22,17 +22,89 @@
 }
 
 .filled{
-    height: 35px;
-    width: 35px;
+    height: 100%;
+    width: 8%;
     background-color: #0090d3;
     border-radius: 100%;
     box-shadow: 2px 2px 5px black;
 }
 
 .empty{
-    height: 35px;
-    width: 35px;
+    height: 100%;
+    width: 8%;
     background-color: gray;
     border-radius: 100%;
     box-shadow: 2px 2px 5px black;
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+
+}
+
+
+/* Tablet */
+@media (max-width: 820px) {
+    .valueContainer{
+        width: 100%;
+        height: 100%;
+    }
+
+    .statName{
+        font-size: 35px;
+    }
+
+    .filled{
+        height: 50%;
+        width: 8%;
+    }
+
+    .empty{
+        height: 50%;
+        width: 8%;
+    }
+
+    .wrapped{
+        width: 100%;
+        height: 100px;
+        margin-top: 15%;
+    }
+
+    .value{
+        font-size: 30px;
+    }
+}
+
+/* Phone */
+@media (max-width: 576px) {
+    .valueContainer{
+        width: 100%;
+        height: 60%;
+    }
+
+    .statName{
+        font-size: 20px;
+    }
+
+    .filled{
+        height: 50%;
+        width: 8%;
+    }
+
+    .empty{
+        height: 50%;
+        width: 8%;
+    }
+
+    .wrapped{
+        width: 100%;
+        height: 100px;
+        margin-top: 15%;
+    }
+
+    .value{
+        font-size: 15px;
+    }
+
+    
 }

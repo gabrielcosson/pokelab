@@ -28,3 +28,54 @@
     padding: 10px;
 
 }
+
+/* Desktop */
+@media (max-width: 1200px) {
+
+}
+
+
+/* Tablet */
+@media (max-width: 820px) {
+    .skillsContainer{
+        height: 60%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    
+    .skillsTitle{
+        font-size: 50px;
+    }
+    
+    .skillName{
+        font-size: 40px;
+    }
+    
+    .skillDescription{
+        font-size: 30px;
+    }
+}
+
+
+/* Phone */
+@media (max-width: 576px) {
+    .skillsContainer{
+        height: 60%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    
+    .skillsTitle{
+        font-size: 30px;
+    }
+    
+    .skillName{
+        font-size: 20px;
+    }
+    
+    .skillDescription{
+        font-size: 20px;
+    }
+}

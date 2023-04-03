@@ -15,7 +15,7 @@ const StatValue = (props) => {
     }
 
     return (
-      <>
+      <div className={StatValueStyle.wrapped}>
         <h3 className={StatValueStyle.statName}>{props.name}</h3>
         <div className={StatValueStyle.valueContainer}>
           {filledCircles.map((filledCircle, index) => (
@@ -26,10 +26,8 @@ const StatValue = (props) => {
           ))}
           <h1 className={StatValueStyle.value}>{props.value}</h1>
         </div>
-      </>
+      </div>
     );
 };
 
 export default StatValue;
-
-//{circles.map(circle => <h1>{filledCircles}</h1>)}

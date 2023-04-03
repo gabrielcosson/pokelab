@@ -1,3 +1,8 @@
+.typeContainer{
+    display: flex;
+    align-items: center;
+}
+
 .typeImage{
     height: 50px;
 }
@@ -8,4 +13,36 @@
     font-size: 50px;
     margin-right: 50px;
     font-style: italic;
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+}
+
+/* Phone */
+
+@media (max-width: 576px) {
+    .typeContainer{
+        width: 20%;
+        margin: 5px;
+        display: block;
+
+    }
+
+    .type{
+        font-size: 20px;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .typeImage{
+        width: 100%;
+}
+
 }

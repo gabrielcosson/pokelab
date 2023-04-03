@@ -29,3 +29,39 @@
 }
 
 
+/* Desktop */
+@media (max-width: 1200px) {
+
+}
+
+
+/* Tablet */
+@media (max-width: 820px) {
+    .listHeader{
+        display: block;
+    }
+    
+    .titleContainer{
+        width: 100%;
+        margin-top: 5%;    
+    }
+
+    .title{
+        font-size: 75px;
+    }
+
+}
+
+
+/* Phone */
+@media (max-width: 576px) {
+    .listHeader{
+        display: block;
+    }
+    
+    .titleContainer{
+        width: 100%;
+        margin-top: 5%;    
+    }
+}
+

@@ -3,6 +3,8 @@
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
+    margin: 0;
+    padding: 0;
 }
 
 .descriptionTitle{
@@ -22,4 +24,42 @@
     color: #535353;
     font-weight: 500;
     text-align: justify;
+}
+
+/* Desktop */
+
+@media (max-width: 1200px) {
+
+}
+
+/* Tablet */
+@media (max-width: 820px) {
+    .descriptionContainer{
+        height: 40%;
+        width: 90%;
+    }
+
+    .descriptionTitle{
+        font-size: 50px;
+    }
+    
+    .description{
+        font-size: 30px;
+    }
+}
+
+/* Phone */
+@media (max-width: 576px) {
+    .descriptionContainer{
+        height: 40%;
+        width: 90%;
+    }
+
+    .descriptionTitle{
+        font-size: 30px;
+    }
+    
+    .description{
+        font-size: 20px;
+    }
 }
