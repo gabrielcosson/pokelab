@@ -1,26 +1,29 @@
-# Pokemon back end challengue
+# Pokemon Challenge (Front)
 
-# Develop by:
+# Developed by:
+
 - [Gabriel Nieves](https://github.com/gabrielnievescosson)
 - [Andrés Pico](https://github.com/Jandres1420)
 
 **Table of Contents**
+
 - [Tools and libraries](#tools)
 - [Instructions to run the application](#instructions)
 
 ## Tools
+
 <img src="src/assets/React-icon.png" width="100" height="100"/>
 <img src="src/assets/vite-logo.png" width="100" height="100"/>
 <br></br>
 
-- React 
+- React
 - Vite
 
 ## Instructions.
 
-- Install node 
-- Clone the [back-end repository](https://github.com/Jandres1420/Pokemon-Challengue-Back-End.git) and follow the readme steps for running the back
-- Continue the steps for running the front
+- Install node
+- Clone the [back-end repository](https://github.com/Jandres1420/Pokemon-Challengue-Back-End.git) and follow the README steps to run the Back-End
+- Continue the steps to run the Front-End
 
 ### First Step
 
@@ -31,16 +34,16 @@ git clone https://github.com/gabrielnievescosson/Pokemon-development.git
 ```
 
 ### Second step
-Enter in the command line or terminal enter to the directory Pokemon-development
+
+Type in the command line, or terminal, the Pokemon-development directory
 
 ```bash
 cd {route}/Pokemon-development
 ```
 
-
 ### Third step
 
-Install the dependencies that the project has with the command
+Install all the dependencies that the project needs using the following command:
 
 ```node
 npm install
@@ -48,17 +51,16 @@ npm install
 
 ### Fourth step
 
-Since we used vited to develop the software use
+Since the application was developed using Vite, use the following command:
 
 ```node
 npm run dev
 ```
 
-If you are running the backend and also yo follow all the steps in this repository you should see this on the terminal
+After successfully running the Back-End application and completing all the previous steps encountered in this document, you should be able to see this on the terminal
 
-![](src/assets/vite-running.png)    
+![](src/assets/vite-running.png)
 
-With all the steps followed you should see on your browser 
+And the following screen on your browser of preference:
 
 ![](src/assets/logIn.png)
-
