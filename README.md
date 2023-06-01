@@ -3,7 +3,7 @@ A visual
 
 # Developed by:
 
-- [Gabriel Nieves](https://github.com/gabrielnievescosson)
+- [Gabriel Cosson](https://github.com/gabrielnievescosson)
 - [Andrés Pico](https://github.com/Jandres1420)
 
 **Table of Contents**
