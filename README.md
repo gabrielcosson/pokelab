@@ -22,23 +22,14 @@ A visual
 
 ## Instructions.
 
-Installations:
-- Node.js
-- pg Admin 4
-- IntelliJ
-- VS Code (or the code editor of your choice)
-
-Procedure:
-- Clone the [back-end repository](https://github.com/Jandres1420/Pokemon-Challengue-Back-End.git) and follow the README steps to run the Back-End
-- Continue the steps to run the Front-End
+Make sure you have downloaded the following before continuing:
+- Install [Node.js](https://nodejs.org/en)
+- Install [VS Code](https://code.visualstudio.com/download) or the code editor of your preference
+- Succesfully completed all the steps in the README file of the [back-end repository](https://github.com/Jandres1420/Pokemon-Challengue-Back-End.git)
 
 ### First Step
 
-Clone this repository with
-
-```bash
-git clone https://github.com/gabrielnievescosson/Pokemon-development.git
-```
+Clone [this repository](https://github.com/gabrielnievescosson/pokelab)
 
 ### Second step
 
