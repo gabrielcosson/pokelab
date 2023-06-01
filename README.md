@@ -1,4 +1,5 @@
-# Pokemon Challenge (Front)
+# Pokelab
+A visual 
 
 # Developed by:
 
@@ -21,7 +22,13 @@
 
 ## Instructions.
 
-- Install node
+Installations:
+- Node.js
+- pg Admin 4
+- IntelliJ
+- VS Code (or the code editor of your choice)
+
+Procedure:
 - Clone the [back-end repository](https://github.com/Jandres1420/Pokemon-Challengue-Back-End.git) and follow the README steps to run the Back-End
 - Continue the steps to run the Front-End
 
