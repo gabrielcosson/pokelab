@@ -8,19 +8,15 @@ A visual
 
 **Table of Contents**
 
-- [Tools and libraries](#tools)
+- [Technologies used](#technologies)
 - [Instructions to run the application](#instructions)
 
-## Tools
-
-<img src="src/assets/React-icon.png" width="100" height="100"/>
-<img src="src/assets/vite-logo.png" width="100" height="100"/>
-<br></br>
+## Technologies used.
 
 - React
 - Vite
 
-## Instructions.
+## Instructions to run the application.
 
 Make sure you have downloaded the following before continuing:
 - Install [Node.js](https://nodejs.org/en)
